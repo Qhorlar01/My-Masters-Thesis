@@ -1,0 +1,3016 @@
+-- ****************************************************************************
+--
+--  Trace file: PWM_withSlaveBITOUT.trc
+--
+--  RTI1104 23.1 (02-May-2023)
+--  Thu Jul 17 17:59:20 2025
+--
+--  Copyright 2025, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+--
+--  Trace file format: 3
+
+-- ******** Keywords **********************************************************
+-- _application "PWM_withSlaveBITOUT.map"
+
+_genname     "RTI"
+_genversion  "23.1"
+_gendate     "07/17/2025 05:59:27"
+_description ""
+_author      "RTI1104 23.1 (02-May-2023)"
+_model       "PWM_withSlaveBITOUT"
+
+-- Default data type formats
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+-- No Data Capture blocks within model: use base sample time as sampling period
+sampling_period[0]
+{
+  value:       5.0E-5
+  alias:       "HostService"
+  increment:   5.0E-5
+  unit:        "s"
+}
+
+
+
+
+-- Type definitions for arrays
+typedef PWM_withSlaveBITOUT_ArrayDT0_2 flt(64,IEEE)[2]
+
+
+-- ******** Simulation control variables **************************************
+
+finalTime
+{
+ type:  flt(64,IEEE)*
+ alias: "finalTime"
+ desc:  "Simulation stop time. When reached, simState switches to STOP."
+ flags:  READONLY
+ unit:  "s"
+}
+
+currentTime
+{
+ type:  flt(64,IEEE)*
+ alias: "currentTime"
+ desc:  "Current simulation time. Increments with execution of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+modelStepSize
+{
+ type:  flt(64,IEEE)
+ alias: "modelStepSize"
+ desc:  "Fixed step size of the model, sample time of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+simState
+{
+ type:  int(32)
+ alias: "simState"
+ desc:  "Simulation state: STOP=0 PAUSE=1 RUN=2"
+ unit:  "-"
+}
+
+msg_last_error_no
+{
+ type:  uint(32)
+ alias: "errorNumber"
+ desc:  "Error number of last error message (zero if no error)."
+ unit:  "-"
+ flags: READONLY
+}
+
+p_dsts_sum_of_reset_time
+{
+ type:  flt(64,IEEE)*
+ alias: "sumOfResetTime"
+ desc:  "Internal variable for summing up reset time."
+ unit:  "s"
+ flags: READONLY|HIDDEN
+}
+
+
+-- ******** Task Information variables ****************************************
+group "Task Info"
+{
+ 
+}
+  group "Timer Task 1"
+  {
+   
+  }
+
+  pRti_TIMERA_STime
+  {
+   type:  flt(64,IEEE)*
+   alias: "sampleTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TTime
+  {
+   type:  flt(64,IEEE)*
+   alias: "turnaroundTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TState
+  {
+   type:  int(32)*
+   alias: "state"
+   flags: READONLY
+  }
+  pRti_TIMERA_OType
+  {
+   type:  int(32)*
+   alias: "overrunCheckType"
+   flags: READONLY
+  }
+  pRti_TIMERA_OMax
+  {
+   type:  int(32)*
+   alias: "overrunQueueMax"
+   flags: READONLY
+  }
+  pRti_TIMERA_ORpt
+  {
+   type:  int(32)*
+   alias: "overrunQueueCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_OCnt
+  {
+   type:  int(32)*
+   alias: "overrunCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_TCnt
+  {
+   type:  flt(64,IEEE)*
+   alias: "taskCallCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_Prio
+  {
+   type:  int(32)*
+   alias: "priority"
+   flags: READONLY
+  }
+  endgroup
+
+
+endgroup
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_PWM_withSlaveBITOUT_real_T_0[16]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_PWM_withSlaveBITOUT_real_T_0[24]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+  
+  
+	group "DS1104SL_DSP_BIT_OUT_C1" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DS1104SL_DSP_BIT_OUT_C1"
+  
+  
+	group "DS1104SL_DSP_BIT_OUT_C4" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DS1104SL_DSP_BIT_OUT_C4"
+  
+  
+	group "PWM Generator" -- subsystem-group
+
+		p_0_PWM_withSlaveBITOUT_boolean_T_1[9]
+		{
+		 type:    uint(8)*
+		 alias:   "PWM"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+		p_1_PWM_withSlaveBITOUT_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Tper"
+		 flags:   PARAM
+		}
+		p_1_PWM_withSlaveBITOUT_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Tdelay"
+		 flags:   PARAM
+		}
+
+		group "Data Type Conversion2" -- block-group
+		{
+		 block: "DataTypeConversion"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[9]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Data Type Conversion2"
+
+		group "Logical\nOperator" -- block-group
+		{
+		 block: "Logic"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[8]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Logical\nOperator"
+
+		group "Relational\nOperator" -- block-group
+		{
+		 block: "RelationalOperator"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[7]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Relational\nOperator"
+
+  
+  
+		group "Carrier counter" -- subsystem-group
+
+			p_0_PWM_withSlaveBITOUT_real_T_0[28]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "T"
+			 flags:   OUTPUT|READONLY
+			}
+
+			p_1_PWM_withSlaveBITOUT_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CarrCount"
+			 flags:   PARAM
+			}
+			p_1_PWM_withSlaveBITOUT_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Range"
+			 flags:   PARAM
+			}
+			trcref2_Tper
+			{
+			 refgroup: ".."
+			 refvar:   "Tper"
+			 alias:    "Tper"
+			}
+			trcref3_Tdelay
+			{
+			 refgroup: ".."
+			 refvar:   "Tdelay"
+			 alias:    "Tdelay"
+			}
+			-- Skipping parameter "Tper"
+			-- Skipping parameter "Tdelay"
+
+			group "Bias" -- block-group
+			{
+			 block: "Bias"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[28]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Range
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Range"
+				}
+				-- Skipping parameter "Bias"
+
+
+			endgroup -- block-group "Bias"
+
+			group "Constant10" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Value"
+
+
+			endgroup -- block-group "Constant10"
+
+			group "Constant2" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_CarrCount
+				{
+				 refgroup: ".."
+				 refvar:   "CarrCount"
+				 alias:    "CarrCount"
+				}
+				trcref0_Value
+				{
+				 refgroup: ".."
+				 refvar:   "CarrCount"
+				 alias:    "Value"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Constant2"
+
+			group "Constant3" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_PWM_withSlaveBITOUT_real_T_0[23]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Constant3"
+
+			group "Constant6" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				trcref0_Value
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Value"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Constant6"
+
+			group "Gain" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[27]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Range
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Range"
+				}
+				trcref0_Gain
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Gain"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Gain"
+
+			group "Gain1" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[25]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Gain"
+
+
+			endgroup -- block-group "Gain1"
+
+			group "Multiport\nSwitch" -- block-group
+			{
+			 block: "MultiPortSwitch"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[24]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Multiport\nSwitch"
+
+			group "Saturation" -- block-group
+			{
+			 block: "Saturate"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[21]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "UpperLimit"
+				 flags:   PARAM
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[22]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "LowerLimit"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Saturation"
+
+			group "Sum3" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[67]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum3"
+
+			group "Sum4" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[63]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum4"
+
+			group "Sum5" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[66]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum5"
+
+  
+  
+			group "Integrator with\nWrapped State\n(Discrete or Continuous)" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_1_PWM_withSlaveBITOUT_real_T_0[8]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WrappedStateLowerValue"
+				 flags:   PARAM
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[12]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "x0"
+				 flags:   PARAM
+				}
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Tper"
+
+  
+  
+				group "Discrete" -- subsystem-group
+
+					p_0_PWM_withSlaveBITOUT_real_T_0[10]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "y"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+					group "Integrator" -- block-group
+					{
+					 block: "DiscreteIntegrator"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[10]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						p_1_PWM_withSlaveBITOUT_real_T_0[17]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "gainval"
+						 flags:   PARAM
+						}
+
+
+					endgroup -- block-group "Integrator"
+
+					group "Initial" -- block-group
+					{
+					 block: "InitialCondition"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[9]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						trcref0_x0
+						{
+						 refgroup: "../.."
+						 refvar:   "x0"
+						 alias:    "x0"
+						}
+						trcref0_Value
+						{
+						 refgroup: "../.."
+						 refvar:   "x0"
+						 alias:    "Value"
+						 flags:    DEPRECATED|HIDDEN
+						}
+
+
+					endgroup -- block-group "Initial"
+
+					group "Logical\nOperator" -- block-group
+					{
+					 block: "Logic"
+					}
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[3]
+						{
+						 type:    uint(8)*
+						 alias:   "Out1"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+					endgroup -- block-group "Logical\nOperator"
+
+  
+  
+					group "Compare\nTo Constant" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[1]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_WrappedStateLowerValue
+						{
+						 refgroup: "../.."
+						 refvar:   "WrappedStateLowerValue"
+						 alias:    "WrappedStateLowerValue"
+						}
+						-- Skipping parameter "WrappedStateLowerValue"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[1]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant"
+  
+  
+					group "Compare\nTo Constant1" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[2]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_Tper
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tper"
+						 alias:    "Tper"
+						}
+						-- Skipping parameter "Tper"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[2]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant1"
+  
+  
+					group "Reinitialization" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_real_T_0[8]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "y"
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Bias" -- block-group
+						{
+						 block: "Bias"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[4]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Bias"
+
+
+						endgroup -- block-group "Bias"
+
+						group "Gain" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[5]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain"
+
+						group "Gain1" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[7]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain1"
+
+						group "Rounding\nFunction" -- block-group
+						{
+						 block: "Rounding"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[6]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Rounding\nFunction"
+
+						group "Sum1" -- block-group
+						{
+						 block: "Sum"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[8]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Sum1"
+
+
+
+					endgroup -- subsystem-group "Reinitialization"
+
+
+				endgroup -- subsystem-group "Discrete"
+
+
+			endgroup -- subsystem-group "Integrator with\nWrapped State\n(Discrete or Continuous)"
+  
+  
+			group "Integrator with\nWrapped State\n(Discrete or Continuous)1" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[23]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_1_PWM_withSlaveBITOUT_real_T_0[9]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WrappedStateLowerValue"
+				 flags:   PARAM
+				}
+				trcref1_Tdelay
+				{
+				 refgroup: "../.."
+				 refvar:   "Tdelay"
+				 alias:    "Tdelay"
+				}
+				-- Skipping parameter "Tdelay"
+
+  
+  
+				group "Discrete" -- subsystem-group
+
+					p_0_PWM_withSlaveBITOUT_real_T_0[23]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "y"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+					group "Integrator" -- block-group
+					{
+					 block: "DiscreteIntegrator"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[23]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						p_1_PWM_withSlaveBITOUT_real_T_0[19]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "gainval"
+						 flags:   PARAM
+						}
+
+
+					endgroup -- block-group "Integrator"
+
+					group "Initial" -- block-group
+					{
+					 block: "InitialCondition"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[22]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						trcref0_Tdelay
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tdelay"
+						 alias:    "Tdelay"
+						}
+						trcref0_Value
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tdelay"
+						 alias:    "Value"
+						 flags:    DEPRECATED|HIDDEN
+						}
+
+
+					endgroup -- block-group "Initial"
+
+					group "Logical\nOperator" -- block-group
+					{
+					 block: "Logic"
+					}
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[6]
+						{
+						 type:    uint(8)*
+						 alias:   "Out1"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+					endgroup -- block-group "Logical\nOperator"
+
+  
+  
+					group "Compare\nTo Constant" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[4]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_WrappedStateLowerValue
+						{
+						 refgroup: "../.."
+						 refvar:   "WrappedStateLowerValue"
+						 alias:    "WrappedStateLowerValue"
+						}
+						-- Skipping parameter "WrappedStateLowerValue"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[4]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant"
+  
+  
+					group "Compare\nTo Constant1" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[5]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							-- Skipping parameter "Value"
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[5]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant1"
+  
+  
+					group "Reinitialization" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_real_T_0[21]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "y"
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Bias" -- block-group
+						{
+						 block: "Bias"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[17]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Bias"
+
+
+						endgroup -- block-group "Bias"
+
+						group "Gain" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[18]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain"
+
+						group "Gain1" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[20]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain1"
+
+						group "Rounding\nFunction" -- block-group
+						{
+						 block: "Rounding"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[19]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Rounding\nFunction"
+
+						group "Sum1" -- block-group
+						{
+						 block: "Sum"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[21]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Sum1"
+
+
+
+					endgroup -- subsystem-group "Reinitialization"
+
+
+				endgroup -- subsystem-group "Discrete"
+
+
+			endgroup -- subsystem-group "Integrator with\nWrapped State\n(Discrete or Continuous)1"
+  
+  
+			group "Limitation" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[65]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant2" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_PWM_withSlaveBITOUT_real_T_0[18]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant2"
+
+				group "Switch" -- block-group
+				{
+				 block: "Switch"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[65]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Threshold
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Threshold"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Switch"
+
+
+
+			endgroup -- subsystem-group "Limitation"
+  
+  
+			group "Limitation1" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[64]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant2" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_PWM_withSlaveBITOUT_real_T_0[20]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant2"
+
+				group "Switch" -- block-group
+				{
+				 block: "Switch"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[64]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Threshold
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Threshold"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Switch"
+
+
+
+			endgroup -- subsystem-group "Limitation1"
+  
+  
+			group "scale" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[16]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Bias" -- block-group
+				{
+				 block: "Bias"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[12]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Bias
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Bias"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Bias"
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Value
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Value"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Constant"
+
+				group "Probe" -- block-group
+				{
+				 block: "Probe"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[0]
+					{
+					 type:    PWM_withSlaveBITOUT_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Probe"
+
+				group "Product" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[3]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product"
+
+				group "Product1" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[11]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product1"
+
+				group "Product2" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[13]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product2"
+
+				group "Product3" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[15]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product3"
+
+				group "Rounding\nFunction" -- block-group
+				{
+				 block: "Rounding"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[14]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Rounding\nFunction"
+
+				group "Sum" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[2]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum"
+
+				group "Sum1" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[16]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum1"
+
+
+
+			endgroup -- subsystem-group "scale"
+
+
+		endgroup -- subsystem-group "Carrier counter"
+  
+  
+		group "Compare\nTo Zero" -- subsystem-group
+
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[0]
+			{
+			 type:    uint(8)*
+			 alias:   "y"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Constant" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_PWM_withSlaveBITOUT_real_T_0[14]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Constant"
+
+			group "Compare" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_PWM_withSlaveBITOUT_boolean_T_1[0]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Compare"
+
+
+
+		endgroup -- subsystem-group "Compare\nTo Zero"
+
+
+	endgroup -- subsystem-group "PWM Generator"
+  
+  
+	group "PWM Generator1" -- subsystem-group
+
+		p_0_PWM_withSlaveBITOUT_boolean_T_1[19]
+		{
+		 type:    uint(8)*
+		 alias:   "PWM"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+		p_1_PWM_withSlaveBITOUT_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Tper"
+		 flags:   PARAM
+		}
+		p_1_PWM_withSlaveBITOUT_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Tdelay"
+		 flags:   PARAM
+		}
+
+		group "Data Type Conversion2" -- block-group
+		{
+		 block: "DataTypeConversion"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[19]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Data Type Conversion2"
+
+		group "Logical\nOperator" -- block-group
+		{
+		 block: "Logic"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[18]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Logical\nOperator"
+
+		group "Relational\nOperator" -- block-group
+		{
+		 block: "RelationalOperator"
+		}
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[17]
+			{
+			 type:    uint(8)*
+			 alias:   "Out1"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Relational\nOperator"
+
+  
+  
+		group "Carrier counter" -- subsystem-group
+
+			p_0_PWM_withSlaveBITOUT_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "T"
+			 flags:   OUTPUT|READONLY
+			}
+
+			p_1_PWM_withSlaveBITOUT_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CarrCount"
+			 flags:   PARAM
+			}
+			p_1_PWM_withSlaveBITOUT_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Range"
+			 flags:   PARAM
+			}
+			trcref2_Tper
+			{
+			 refgroup: ".."
+			 refvar:   "Tper"
+			 alias:    "Tper"
+			}
+			trcref3_Tdelay
+			{
+			 refgroup: ".."
+			 refvar:   "Tdelay"
+			 alias:    "Tdelay"
+			}
+			-- Skipping parameter "Tper"
+			-- Skipping parameter "Tdelay"
+
+			group "Bias" -- block-group
+			{
+			 block: "Bias"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[57]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Range
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Range"
+				}
+				-- Skipping parameter "Bias"
+
+
+			endgroup -- block-group "Bias"
+
+			group "Constant10" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Value"
+
+
+			endgroup -- block-group "Constant10"
+
+			group "Constant2" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_CarrCount
+				{
+				 refgroup: ".."
+				 refvar:   "CarrCount"
+				 alias:    "CarrCount"
+				}
+				trcref0_Value
+				{
+				 refgroup: ".."
+				 refvar:   "CarrCount"
+				 alias:    "Value"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Constant2"
+
+			group "Constant3" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_PWM_withSlaveBITOUT_real_T_0[31]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Constant3"
+
+			group "Constant6" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				trcref0_Value
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Value"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Constant6"
+
+			group "Gain" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[56]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Range
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Range"
+				}
+				trcref0_Gain
+				{
+				 refgroup: ".."
+				 refvar:   "Range"
+				 alias:    "Gain"
+				 flags:    DEPRECATED|HIDDEN
+				}
+
+
+			endgroup -- block-group "Gain"
+
+			group "Gain1" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[54]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Gain"
+
+
+			endgroup -- block-group "Gain1"
+
+			group "Multiport\nSwitch" -- block-group
+			{
+			 block: "MultiPortSwitch"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[53]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Multiport\nSwitch"
+
+			group "Saturation" -- block-group
+			{
+			 block: "Saturate"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[55]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[29]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "UpperLimit"
+				 flags:   PARAM
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[30]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "LowerLimit"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Saturation"
+
+			group "Sum3" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[62]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum3"
+
+			group "Sum4" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[58]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum4"
+
+			group "Sum5" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_PWM_withSlaveBITOUT_real_T_0[61]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum5"
+
+  
+  
+			group "Integrator with\nWrapped State\n(Discrete or Continuous)" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[39]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_1_PWM_withSlaveBITOUT_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WrappedStateLowerValue"
+				 flags:   PARAM
+				}
+				p_1_PWM_withSlaveBITOUT_real_T_0[13]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "x0"
+				 flags:   PARAM
+				}
+				trcref0_Tper
+				{
+				 refgroup: "../.."
+				 refvar:   "Tper"
+				 alias:    "Tper"
+				}
+				-- Skipping parameter "Tper"
+
+  
+  
+				group "Discrete" -- subsystem-group
+
+					p_0_PWM_withSlaveBITOUT_real_T_0[39]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "y"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+					group "Integrator" -- block-group
+					{
+					 block: "DiscreteIntegrator"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[39]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						p_1_PWM_withSlaveBITOUT_real_T_0[25]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "gainval"
+						 flags:   PARAM
+						}
+
+
+					endgroup -- block-group "Integrator"
+
+					group "Initial" -- block-group
+					{
+					 block: "InitialCondition"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[38]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						trcref0_x0
+						{
+						 refgroup: "../.."
+						 refvar:   "x0"
+						 alias:    "x0"
+						}
+						trcref0_Value
+						{
+						 refgroup: "../.."
+						 refvar:   "x0"
+						 alias:    "Value"
+						 flags:    DEPRECATED|HIDDEN
+						}
+
+
+					endgroup -- block-group "Initial"
+
+					group "Logical\nOperator" -- block-group
+					{
+					 block: "Logic"
+					}
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[13]
+						{
+						 type:    uint(8)*
+						 alias:   "Out1"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+					endgroup -- block-group "Logical\nOperator"
+
+  
+  
+					group "Compare\nTo Constant" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[11]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_WrappedStateLowerValue
+						{
+						 refgroup: "../.."
+						 refvar:   "WrappedStateLowerValue"
+						 alias:    "WrappedStateLowerValue"
+						}
+						-- Skipping parameter "WrappedStateLowerValue"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[11]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant"
+  
+  
+					group "Compare\nTo Constant1" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[12]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_Tper
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tper"
+						 alias:    "Tper"
+						}
+						-- Skipping parameter "Tper"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[12]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant1"
+  
+  
+					group "Reinitialization" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_real_T_0[37]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "y"
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Bias" -- block-group
+						{
+						 block: "Bias"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[33]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Bias"
+
+
+						endgroup -- block-group "Bias"
+
+						group "Gain" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[34]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain"
+
+						group "Gain1" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[36]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain1"
+
+						group "Rounding\nFunction" -- block-group
+						{
+						 block: "Rounding"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[35]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Rounding\nFunction"
+
+						group "Sum1" -- block-group
+						{
+						 block: "Sum"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[37]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Sum1"
+
+
+
+					endgroup -- subsystem-group "Reinitialization"
+
+
+				endgroup -- subsystem-group "Discrete"
+
+
+			endgroup -- subsystem-group "Integrator with\nWrapped State\n(Discrete or Continuous)"
+  
+  
+			group "Integrator with\nWrapped State\n(Discrete or Continuous)1" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[52]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_1_PWM_withSlaveBITOUT_real_T_0[11]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WrappedStateLowerValue"
+				 flags:   PARAM
+				}
+				trcref1_Tdelay
+				{
+				 refgroup: "../.."
+				 refvar:   "Tdelay"
+				 alias:    "Tdelay"
+				}
+				-- Skipping parameter "Tdelay"
+
+  
+  
+				group "Discrete" -- subsystem-group
+
+					p_0_PWM_withSlaveBITOUT_real_T_0[52]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "y"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+					group "Integrator" -- block-group
+					{
+					 block: "DiscreteIntegrator"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[52]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						p_1_PWM_withSlaveBITOUT_real_T_0[27]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "gainval"
+						 flags:   PARAM
+						}
+
+
+					endgroup -- block-group "Integrator"
+
+					group "Initial" -- block-group
+					{
+					 block: "InitialCondition"
+					}
+						p_0_PWM_withSlaveBITOUT_real_T_0[51]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "Out1"
+						 flags:   OUTPUT|READONLY
+						}
+						trcref0_Tdelay
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tdelay"
+						 alias:    "Tdelay"
+						}
+						trcref0_Value
+						{
+						 refgroup: "../../../.."
+						 refvar:   "Tdelay"
+						 alias:    "Value"
+						 flags:    DEPRECATED|HIDDEN
+						}
+
+
+					endgroup -- block-group "Initial"
+
+					group "Logical\nOperator" -- block-group
+					{
+					 block: "Logic"
+					}
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[16]
+						{
+						 type:    uint(8)*
+						 alias:   "Out1"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+					endgroup -- block-group "Logical\nOperator"
+
+  
+  
+					group "Compare\nTo Constant" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[14]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+						trcref0_WrappedStateLowerValue
+						{
+						 refgroup: "../.."
+						 refvar:   "WrappedStateLowerValue"
+						 alias:    "WrappedStateLowerValue"
+						}
+						-- Skipping parameter "WrappedStateLowerValue"
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							trcref0_Value
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "Value"
+							 flags:    DEPRECATED|HIDDEN
+							}
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[14]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant"
+  
+  
+					group "Compare\nTo Constant1" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_boolean_T_1[15]
+						{
+						 type:    uint(8)*
+						 alias:   "y"
+						 range:   < 0 ; 1 >
+						 bitmask: 0x01
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Constant" -- block-group
+						{
+						 block: "Constant"
+						}
+							-- Skipping output Out1
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							-- Skipping parameter "Value"
+
+
+						endgroup -- block-group "Constant"
+
+						group "Compare" -- block-group
+						{
+						 block: "RelationalOperator"
+						}
+							p_0_PWM_withSlaveBITOUT_boolean_T_1[15]
+							{
+							 type:    uint(8)*
+							 alias:   "Out1"
+							 range:   < 0 ; 1 >
+							 bitmask: 0x01
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Compare"
+
+
+
+					endgroup -- subsystem-group "Compare\nTo Constant1"
+  
+  
+					group "Reinitialization" -- subsystem-group
+
+						p_0_PWM_withSlaveBITOUT_real_T_0[50]
+						{
+						 type:    flt(64,IEEE)*
+						 alias:   "y"
+						 flags:   OUTPUT|READONLY
+						}
+
+
+						group "Bias" -- block-group
+						{
+						 block: "Bias"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[46]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Bias"
+
+
+						endgroup -- block-group "Bias"
+
+						group "Gain" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[47]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain"
+
+						group "Gain1" -- block-group
+						{
+						 block: "Gain"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[49]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+							trcref0_Tper
+							{
+							 refgroup: "../../../../.."
+							 refvar:   "Tper"
+							 alias:    "Tper"
+							}
+							trcref1_WrappedStateLowerValue
+							{
+							 refgroup: "../../.."
+							 refvar:   "WrappedStateLowerValue"
+							 alias:    "WrappedStateLowerValue"
+							}
+							-- Skipping parameter "Gain"
+							-- Skipping parameter "Gain"
+
+
+						endgroup -- block-group "Gain1"
+
+						group "Rounding\nFunction" -- block-group
+						{
+						 block: "Rounding"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[48]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Rounding\nFunction"
+
+						group "Sum1" -- block-group
+						{
+						 block: "Sum"
+						}
+							p_0_PWM_withSlaveBITOUT_real_T_0[50]
+							{
+							 type:    flt(64,IEEE)*
+							 alias:   "Out1"
+							 flags:   OUTPUT|READONLY
+							}
+
+
+						endgroup -- block-group "Sum1"
+
+
+
+					endgroup -- subsystem-group "Reinitialization"
+
+
+				endgroup -- subsystem-group "Discrete"
+
+
+			endgroup -- subsystem-group "Integrator with\nWrapped State\n(Discrete or Continuous)1"
+  
+  
+			group "Limitation" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[60]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant2" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_PWM_withSlaveBITOUT_real_T_0[26]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant2"
+
+				group "Switch" -- block-group
+				{
+				 block: "Switch"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[60]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Threshold
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Threshold"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Switch"
+
+
+
+			endgroup -- subsystem-group "Limitation"
+  
+  
+			group "Limitation1" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[59]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant2" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_PWM_withSlaveBITOUT_real_T_0[28]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant2"
+
+				group "Switch" -- block-group
+				{
+				 block: "Switch"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[59]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Threshold
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Threshold"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Switch"
+
+
+
+			endgroup -- subsystem-group "Limitation1"
+  
+  
+			group "scale" -- subsystem-group
+
+				p_0_PWM_withSlaveBITOUT_real_T_0[45]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Bias" -- block-group
+				{
+				 block: "Bias"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[41]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Bias
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Bias"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Bias"
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					trcref0_Tper
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Tper"
+					}
+					trcref0_Value
+					{
+					 refgroup: "../../.."
+					 refvar:   "Tper"
+					 alias:    "Value"
+					 flags:    DEPRECATED|HIDDEN
+					}
+
+
+				endgroup -- block-group "Constant"
+
+				group "Probe" -- block-group
+				{
+				 block: "Probe"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[29]
+					{
+					 type:    PWM_withSlaveBITOUT_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Probe"
+
+				group "Product" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[32]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product"
+
+				group "Product1" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[40]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product1"
+
+				group "Product2" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[42]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product2"
+
+				group "Product3" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[44]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product3"
+
+				group "Rounding\nFunction" -- block-group
+				{
+				 block: "Rounding"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[43]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Rounding\nFunction"
+
+				group "Sum" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[31]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum"
+
+				group "Sum1" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_PWM_withSlaveBITOUT_real_T_0[45]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum1"
+
+
+
+			endgroup -- subsystem-group "scale"
+
+
+		endgroup -- subsystem-group "Carrier counter"
+  
+  
+		group "Compare\nTo Zero" -- subsystem-group
+
+			p_0_PWM_withSlaveBITOUT_boolean_T_1[10]
+			{
+			 type:    uint(8)*
+			 alias:   "y"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Constant" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_PWM_withSlaveBITOUT_real_T_0[15]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Constant"
+
+			group "Compare" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_PWM_withSlaveBITOUT_boolean_T_1[10]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Compare"
+
+
+
+		endgroup -- subsystem-group "Compare\nTo Zero"
+
+
+	endgroup -- subsystem-group "PWM Generator1"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+
+
+
+endgroup -- "Model Root"
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+-- Generation of RTT Dynamic Variables turned off with EnableRealTimeTesting option.
+
+-- ******** User variables from model_usr.trc *********************************
+
+-- RTI_USR_TRC_BEGIN
+
+-- No user file PWM_withSlaveBITOUT_usr.trc found.
+
+-- RTI_USR_TRC_END
+
+
+-- ******** [EOF] *************************************************************
+

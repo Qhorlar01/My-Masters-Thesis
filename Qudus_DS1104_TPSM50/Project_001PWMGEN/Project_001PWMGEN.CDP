@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<creator type="key">ControlDesk 23.1</creator>
+	<majorversion type="key">23</majorversion>
+	<minorversion type="key">1</minorversion>
+	<maintenanceversion type="key">0</maintenanceversion>
+	<specialbuildversion type="key"/>
+	<releasename type="key">2023-A</releasename>
+	<project>
+		<Creator type="key">ControlDesk</Creator>
+		<MigrationHistory type="key"/>
+		<Name type="key">Project_001PWMGEN.CDP</Name>
+		<DisplayName type="key">Project_001PWMGEN</DisplayName>
+		<Flags type="key">4096</Flags>
+		<Type type="key">1</Type>
+		<UniqueID type="key">330600510</UniqueID>
+		<EntityID type="key">{32B2E601-CA82-4794-89A9-70E66FBBF3F2}</EntityID>
+		<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+		<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+		<ItemInfoDescr type="key"/>
+		<ItemInfoAddInfoDb type="key"/>
+		<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		<item>
+			<Targets type="key">project</Targets>
+			<Name type="key">Project_001PWMGEN</Name>
+			<DisplayName type="key">Project_001PWMGEN</DisplayName>
+			<Path type="key">..</Path>
+			<Flags type="key">4100</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">587240665</UniqueID>
+			<EntityID type="key">{687C366D-EC2D-478F-9390-0099833F6C41}</EntityID>
+			<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			<item>
+				<Docs type="key">.doc,.docx,.pdf</Docs>
+				<Name type="key">Specifications</Name>
+				<DisplayName type="key">Specifications</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">813858778</UniqueID>
+				<EntityID type="key">{36E4BECC-24D6-48C6-A487-6A573DADE70B}</EntityID>
+				<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.doc,.docx,.pdf</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Docs type="key">.mpp</Docs>
+				<Name type="key">Project Plans</Name>
+				<DisplayName type="key">Project Plans</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">851302791</UniqueID>
+				<EntityID type="key">{FAEE41F8-9311-4E14-B297-FD81ABFE4787}</EntityID>
+				<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.mpp</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">pythonscriptcomponent</Targets>
+				<Name type="key">Python Scripts</Name>
+				<DisplayName type="key">Python Scripts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">236457107</UniqueID>
+				<EntityID type="key">{CE1B3C00-1112-4DAE-8E66-960D98E9CC8E}</EntityID>
+				<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">signaleditor</Targets>
+				<Name type="key">Signal Description Sets</Name>
+				<DisplayName type="key">Signal Description Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">100573926</UniqueID>
+				<EntityID type="key">{F6FEBA3C-BE0D-44E8-9891-20F08C54A5A3}</EntityID>
+				<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">AutomationCustomData.json</Name>
+			<DisplayName type="key">AutomationCustomData.json</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<Type type="key">4</Type>
+			<UniqueID type="key">648467565</UniqueID>
+			<EntityID type="key">{D21C02FD-83C5-4916-859B-07CE60A0A625}</EntityID>
+			<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		</item>
+		<item>
+			<Name type="key">Events</Name>
+			<DisplayName type="key">Events</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<ExtendedFlags type="key">4</ExtendedFlags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">77860695</UniqueID>
+			<EntityID type="key">{5D4758F8-16CD-4B0A-94F4-93ACBF08EF9D}</EntityID>
+			<ItemInfoDate type="key">2025-07-11 16:16:17</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			<item>
+				<Name type="key">Project.events</Name>
+				<DisplayName type="key">Project.events</DisplayName>
+				<Path type="key">.\Events</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">52</Type>
+				<UniqueID type="key">1051307758</UniqueID>
+				<EntityID type="key">{ECA06672-56A5-471B-A0D6-F4EF88AE1F4B}</EntityID>
+				<ItemInfoDate type="key">2025-07-11 16:16:17</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+		</item>
+	</project>
+	<experiments>
+		<experiment>
+			<Creator type="key">ControlDesk</Creator>
+			<MigrationHistory type="key"/>
+			<Name type="key">Experiment_001.CDE</Name>
+			<DisplayName type="key">Experiment_001</DisplayName>
+			<Path type="key">.\Experiment_001</Path>
+			<Flags type="key">4096</Flags>
+			<Type type="key">2</Type>
+			<UniqueID type="key">997242494</UniqueID>
+			<EntityID type="key">{579DAE24-83A0-4279-AD2D-43F5FD890282}</EntityID>
+			<ItemInfoDate type="key">2025-07-11 16:16:14</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		</experiment>
+	</experiments>
+	<ProjectExperiment>
+		<LastActiveExperiment type="key">Experiment_001</LastActiveExperiment>
+	</ProjectExperiment>
+	<DataSetManager>
+		<Version>
+			<Version type="key">2</Version>
+		</Version>
+		<Work/>
+		<ActiveWork/>
+		<Reference/>
+		<ActiveReference/>
+		<Master/>
+		<ActiveMaster/>
+		<InitialMaster/>
+		<Incomplete/>
+		<IncompleteReadonly/>
+		<DataSet/>
+		<Readonly/>
+		<AutomaticDownload/>
+	</DataSetManager>
+	<PlatformManagement/>
+	<DiagnosticsManagement/>
+	<Instrumentation Version="1">
+		<UniqueIds Version="3">
+			<Count type="key">1</Count>
+			<File1 type="key">Experiment_001/Layout1</File1>
+			<Id1 type="key">0</Id1>
+		</UniqueIds>
+	</Instrumentation>
+	<VariablesManagement/>
+	<MeasureDataManagement/>
+	<MeasurementConfiguration/>
+	<BusNavigator/>
+	<SignalEditor/>
+	<XILAPIEESPort/>
+	<PythonScriptComponent/>
+</Root>

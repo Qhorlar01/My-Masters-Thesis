@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDescriptionMetaData SchemaVersion="1">
+  <SerializedFileName>pwm_withslavebitout.vdp</SerializedFileName>
+  <IsActive>true</IsActive>
+  <FileName>pwm_withslavebitout.sdf</FileName>
+  <VariableDescriptionSourcePathAndFileName>..\pwm_withslavebitout.sdf</VariableDescriptionSourcePathAndFileName>
+  <ImportOptions>
+    <DisableLookupDetection>false</DisableLookupDetection>
+    <MeasurementArrayOmitThreshold>200000</MeasurementArrayOmitThreshold>
+    <ValueBlockOmitThreshold>200000</ValueBlockOmitThreshold>
+  </ImportOptions>
+</VariableDescriptionMetaData>

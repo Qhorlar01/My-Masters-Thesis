@@ -1,0 +1,7 @@
+
+
+
+-- Type definitions for arrays
+typedef PWM_withSlaveBITOUT_ArrayDT0_2 flt(64,IEEE)[2]
+
+

@@ -1,0 +1,14 @@
+[System]
+Version=2.2
+SystemType=SingleProcessorSystem
+DAQService=HostService
+Status=Start
+RTP=Master
+
+[Master]
+Type=DS1104
+State=Enabled
+ServiceID=1
+BoardName=unknown
+File=pwm_withslavebitout.ppc
+ID=DA6741A0-7E19-450D-A9E3-166BC9ECCFD8

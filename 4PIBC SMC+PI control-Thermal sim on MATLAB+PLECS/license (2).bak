@@ -1,0 +1,18 @@
+PACKAGE plecscombocoder plexim COMPONENTS="plecsrtw plecscoder" \
+	OPTIONS=SUITE SIGN="00D7 CF6A 758D 517E D8D6 8750 0D4C 7200 \
+	5F17 C41C B911 CDC2 27B7 9F12 13CF"
+PACKAGE plecscombo plexim COMPONENTS="plecsedit plecssolve" \
+	OPTIONS=SUITE SIGN="00C8 7A1F E1F6 4100 40EE AE92 29AC 6600 \
+	A0C8 8CA5 004D 8460 4438 F2F1 EB8E"
+FEATURE plecscombocoder plexim 4.9 03-jul-2026 uncounted \
+	HOSTID=USERHOST=qaromose+b8ca3a8e057f ISSUED=03-jul-2025 \
+	NOTICE="{`name` : `Qudus Aromose` , `organization` : `FEMTO ST \
+	DEPARTEMENT ENERGIE` , `country` : `FR`}" SN=STUDENT \
+	SIGN="00C2 A1EC 6FAD AFCE 86D7 2FDD 2123 C800 006C 0C85 CA66 \
+	466B E2D7 0602 7A7C"
+FEATURE plecscombo plexim 4.9 03-jul-2026 uncounted \
+	HOSTID=USERHOST=qaromose+b8ca3a8e057f ISSUED=03-jul-2025 \
+	NOTICE="{`name` : `Qudus Aromose` , `organization` : `FEMTO ST \
+	DEPARTEMENT ENERGIE` , `country` : `FR`}" SN=STUDENT \
+	SIGN="008B 3E47 4504 A323 C793 5FD6 0593 AA00 9324 6E54 DFC6 \
+	C1D3 FE6B B4D3 46C7"

@@ -1,0 +1,3061 @@
+-- ****************************************************************************
+--
+--  Trace file: PWM_withSlaveBITOUT.trc
+--
+--  RTI1104 23.1 (02-May-2023)
+--  Fri Jul 11 16:13:15 2025
+--
+--  Copyright 2025, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+--
+--  Trace file format: 3
+
+-- ******** Keywords **********************************************************
+-- _application "PWM_withSlaveBITOUT.map"
+
+_author      "RTI1104 23.1 (02-May-2023)"
+_description ""
+_gendate     "07/11/2025 04:13:19"
+_genname     "RTI"
+_genversion  "23.1"
+_model       "PWM_withSlaveBITOUT"
+
+
+sampling_period[0]
+{
+    alias:     "HostService"
+    increment: 0.000013333333
+    unit:      "s"
+    value:     0.000013333333
+}
+
+typedef PWM_withSlaveBITOUT_ArrayDT0_2 float(64,IEEE) [2]
+
+currentTime
+{
+    addr:  0x3c4b0
+    alias: "currentTime"
+    desc:  "Current simulation time. Increments with execution of Timer Task 1."
+    flags: READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+msg_last_error_no
+{
+    addr:  0x3bb0c
+    alias: "errorNumber"
+    desc:  "Error number of last error message (zero if no error)."
+    flags: READONLY
+    type:  uint(32)
+    unit:  "-"
+}
+
+finalTime
+{
+    addr:  0x3c4b4
+    alias: "finalTime"
+    desc:  "Simulation stop time. When reached, simState switches to STOP."
+    flags: READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+modelStepSize
+{
+    addr:  0x3c4b8
+    alias: "modelStepSize"
+    desc:  "Fixed step size of the model, sample time of Timer Task 1."
+    flags: READONLY
+    type:  float(64,IEEE)
+    unit:  "s"
+}
+
+simState
+{
+    addr:  0x3b988
+    alias: "simState"
+    desc:  "Simulation state: STOP=0 PAUSE=1 RUN=2"
+    type:  int(32)
+    unit:  "-"
+}
+
+p_dsts_sum_of_reset_time
+{
+    addr:  0x38768
+    alias: "sumOfResetTime"
+    desc:  "Internal variable for summing up reset time."
+    flags: HIDDEN|READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+group "Model Root"
+
+    group "Constant"
+    {
+        block: "Constant"
+    }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[16]
+        {
+            addr:  0x3b978
+            alias: "Value"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Constant1"
+    {
+        block: "Constant"
+    }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[23]
+        {
+            addr:  0x3b978
+            alias: "Value"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "DS1104SL_DSP_BIT_OUT_C1"
+
+    endgroup
+
+    group "DS1104SL_DSP_BIT_OUT_C2"
+
+    endgroup
+
+    group "PWM Generator"
+
+        p_0_PWM_withSlaveBITOUT_boolean_T_1[9]
+        {
+            addr:    0x3b974
+            alias:   "PWM"
+            bitmask: 0x1
+            flags:   OUTPUT|READONLY
+            range:   < 0 ; 1 >
+            type:    uint(8)*
+        }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[4]
+        {
+            addr:  0x3b978
+            alias: "Tdelay"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[6]
+        {
+            addr:  0x3b978
+            alias: "Tper"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        group "Carrier counter"
+
+            p_1_PWM_withSlaveBITOUT_real_T_0[0]
+            {
+                addr:  0x3b978
+                alias: "CarrCount"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_1_PWM_withSlaveBITOUT_real_T_0[2]
+            {
+                addr:  0x3b978
+                alias: "Range"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_PWM_withSlaveBITOUT_real_T_0[28]
+            {
+                addr:  0x3b970
+                alias: "T"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref3_Tdelay
+            {
+                alias:    "Tdelay"
+                refgroup: "/Model Root/PWM Generator"
+                refvar:   "Tdelay"
+            }
+
+            trcref2_Tper
+            {
+                alias:    "Tper"
+                refgroup: "/Model Root/PWM Generator"
+                refvar:   "Tper"
+            }
+
+            group "Bias"
+            {
+                block: "Bias"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[28]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Range
+                {
+                    alias:    "Range"
+                    refgroup: "/Model Root/PWM Generator/Carrier counter"
+                    refvar:   "Range"
+                }
+
+            endgroup
+
+            group "Constant10"
+            {
+                block: "Constant"
+            }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Constant2"
+            {
+                block: "Constant"
+            }
+
+                trcref0_CarrCount
+                {
+                    alias:    "CarrCount"
+                    refgroup: "/Model Root/PWM Generator/Carrier counter"
+                    refvar:   "CarrCount"
+                }
+
+                trcref0_Value
+                {
+                    alias:    "Value"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator/Carrier counter"
+                    refvar:   "CarrCount"
+                }
+
+            endgroup
+
+            group "Constant3"
+            {
+                block: "Constant"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[30]
+                {
+                    addr:  0x3b978
+                    alias: "Value"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Constant6"
+            {
+                block: "Constant"
+            }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tper"
+                }
+
+                trcref0_Value
+                {
+                    alias:    "Value"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Gain"
+            {
+                block: "Gain"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[27]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Gain
+                {
+                    alias:    "Gain"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator/Carrier counter"
+                    refvar:   "Range"
+                }
+
+                trcref0_Range
+                {
+                    alias:    "Range"
+                    refgroup: "/Model Root/PWM Generator/Carrier counter"
+                    refvar:   "Range"
+                }
+
+            endgroup
+
+            group "Gain1"
+            {
+                block: "Gain"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[25]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Integrator with\nWrapped State\n(Discrete or Continuous)"
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[8]
+                {
+                    addr:  0x3b978
+                    alias: "WrappedStateLowerValue"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[12]
+                {
+                    addr:  0x3b978
+                    alias: "x0"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[10]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tper"
+                }
+
+                group "Discrete"
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[10]
+                    {
+                        addr:  0x3b970
+                        alias: "y"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    group "Compare\nTo Constant"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[1]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_WrappedStateLowerValue
+                        {
+                            alias:    "WrappedStateLowerValue"
+                            refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "WrappedStateLowerValue"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[1]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Compare\nTo Constant1"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[2]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_Tper
+                        {
+                            alias:    "Tper"
+                            refgroup: "/Model Root/PWM Generator"
+                            refvar:   "Tper"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[2]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Initial"
+                    {
+                        block: "InitialCondition"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[9]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        trcref0_Value
+                        {
+                            alias:    "Value"
+                            flags:    DEPRECATED|HIDDEN
+                            refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "x0"
+                        }
+
+                        trcref0_x0
+                        {
+                            alias:    "x0"
+                            refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "x0"
+                        }
+
+                    endgroup
+
+                    group "Integrator"
+                    {
+                        block: "DiscreteIntegrator"
+                    }
+
+                        p_1_PWM_withSlaveBITOUT_real_T_0[17]
+                        {
+                            addr:  0x3b978
+                            alias: "gainval"
+                            flags: PARAM
+                            type:  float(64,IEEE)*
+                        }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[10]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                    endgroup
+
+                    group "Logical\nOperator"
+                    {
+                        block: "Logic"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[3]
+                        {
+                            addr:    0x3b974
+                            alias:   "Out1"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                    endgroup
+
+                    group "Reinitialization"
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[8]
+                        {
+                            addr:  0x3b970
+                            alias: "y"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        group "Bias"
+                        {
+                            block: "Bias"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[4]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[5]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain1"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[7]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Rounding\nFunction"
+                        {
+                            block: "Rounding"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[6]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                        group "Sum1"
+                        {
+                            block: "Sum"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[8]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                endgroup
+
+            endgroup
+
+            group "Integrator with\nWrapped State\n(Discrete or Continuous)1"
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[9]
+                {
+                    addr:  0x3b978
+                    alias: "WrappedStateLowerValue"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[23]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref1_Tdelay
+                {
+                    alias:    "Tdelay"
+                    refgroup: "/Model Root/PWM Generator"
+                    refvar:   "Tdelay"
+                }
+
+                group "Discrete"
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[23]
+                    {
+                        addr:  0x3b970
+                        alias: "y"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    group "Compare\nTo Constant"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[4]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_WrappedStateLowerValue
+                        {
+                            alias:    "WrappedStateLowerValue"
+                            refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                            refvar:   "WrappedStateLowerValue"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[4]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Compare\nTo Constant1"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[5]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[5]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Initial"
+                    {
+                        block: "InitialCondition"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[22]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        trcref0_Tdelay
+                        {
+                            alias:    "Tdelay"
+                            refgroup: "/Model Root/PWM Generator"
+                            refvar:   "Tdelay"
+                        }
+
+                        trcref0_Value
+                        {
+                            alias:    "Value"
+                            flags:    DEPRECATED|HIDDEN
+                            refgroup: "/Model Root/PWM Generator"
+                            refvar:   "Tdelay"
+                        }
+
+                    endgroup
+
+                    group "Integrator"
+                    {
+                        block: "DiscreteIntegrator"
+                    }
+
+                        p_1_PWM_withSlaveBITOUT_real_T_0[19]
+                        {
+                            addr:  0x3b978
+                            alias: "gainval"
+                            flags: PARAM
+                            type:  float(64,IEEE)*
+                        }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[23]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                    endgroup
+
+                    group "Logical\nOperator"
+                    {
+                        block: "Logic"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[6]
+                        {
+                            addr:    0x3b974
+                            alias:   "Out1"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                    endgroup
+
+                    group "Reinitialization"
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[21]
+                        {
+                            addr:  0x3b970
+                            alias: "y"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        group "Bias"
+                        {
+                            block: "Bias"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[17]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[18]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain1"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[20]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Rounding\nFunction"
+                        {
+                            block: "Rounding"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[19]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                        group "Sum1"
+                        {
+                            block: "Sum"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[21]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                endgroup
+
+            endgroup
+
+            group "Limitation"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[65]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Constant2"
+                {
+                    block: "Constant"
+                }
+
+                    p_1_PWM_withSlaveBITOUT_real_T_0[18]
+                    {
+                        addr:  0x3b978
+                        alias: "Value"
+                        flags: PARAM
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Switch"
+                {
+                    block: "Switch"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[65]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Threshold
+                    {
+                        alias:    "Threshold"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Limitation1"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[64]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Constant2"
+                {
+                    block: "Constant"
+                }
+
+                    p_1_PWM_withSlaveBITOUT_real_T_0[20]
+                    {
+                        addr:  0x3b978
+                        alias: "Value"
+                        flags: PARAM
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Switch"
+                {
+                    block: "Switch"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[64]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Threshold
+                    {
+                        alias:    "Threshold"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Multiport\nSwitch"
+            {
+                block: "MultiPortSwitch"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[24]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Saturation"
+            {
+                block: "Saturate"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[22]
+                {
+                    addr:  0x3b978
+                    alias: "LowerLimit"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[26]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[21]
+                {
+                    addr:  0x3b978
+                    alias: "UpperLimit"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "scale"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[16]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Bias"
+                {
+                    block: "Bias"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[12]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Bias
+                    {
+                        alias:    "Bias"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+                group "Constant"
+                {
+                    block: "Constant"
+                }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Value
+                    {
+                        alias:    "Value"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+                group "Probe"
+                {
+                    block: "Probe"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[0]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  PWM_withSlaveBITOUT_ArrayDT0_2*
+                    }
+
+                endgroup
+
+                group "Product"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[3]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product1"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[11]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product2"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[13]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product3"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[15]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Rounding\nFunction"
+                {
+                    block: "Rounding"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[14]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Sum"
+                {
+                    block: "Sum"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[2]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Sum1"
+                {
+                    block: "Sum"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[16]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Sum3"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[67]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Sum4"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[63]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Sum5"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[66]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Compare\nTo Zero"
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[0]
+            {
+                addr:    0x3b974
+                alias:   "y"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+            group "Compare"
+            {
+                block: "RelationalOperator"
+            }
+
+                p_0_PWM_withSlaveBITOUT_boolean_T_1[0]
+                {
+                    addr:    0x3b974
+                    alias:   "Out1"
+                    bitmask: 0x1
+                    flags:   OUTPUT|READONLY
+                    range:   < 0 ; 1 >
+                    type:    uint(8)*
+                }
+
+            endgroup
+
+            group "Constant"
+            {
+                block: "Constant"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[14]
+                {
+                    addr:  0x3b978
+                    alias: "Value"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Data Type Conversion2"
+        {
+            block: "DataTypeConversion"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[9]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Logical\nOperator"
+        {
+            block: "Logic"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[8]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Relational\nOperator"
+        {
+            block: "RelationalOperator"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[7]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "PWM Generator1"
+
+        p_0_PWM_withSlaveBITOUT_boolean_T_1[19]
+        {
+            addr:    0x3b974
+            alias:   "PWM"
+            bitmask: 0x1
+            flags:   OUTPUT|READONLY
+            range:   < 0 ; 1 >
+            type:    uint(8)*
+        }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[5]
+        {
+            addr:  0x3b978
+            alias: "Tdelay"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_1_PWM_withSlaveBITOUT_real_T_0[7]
+        {
+            addr:  0x3b978
+            alias: "Tper"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        group "Carrier counter"
+
+            p_1_PWM_withSlaveBITOUT_real_T_0[1]
+            {
+                addr:  0x3b978
+                alias: "CarrCount"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_1_PWM_withSlaveBITOUT_real_T_0[3]
+            {
+                addr:  0x3b978
+                alias: "Range"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_PWM_withSlaveBITOUT_real_T_0[57]
+            {
+                addr:  0x3b970
+                alias: "T"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref3_Tdelay
+            {
+                alias:    "Tdelay"
+                refgroup: "/Model Root/PWM Generator1"
+                refvar:   "Tdelay"
+            }
+
+            trcref2_Tper
+            {
+                alias:    "Tper"
+                refgroup: "/Model Root/PWM Generator1"
+                refvar:   "Tper"
+            }
+
+            group "Bias"
+            {
+                block: "Bias"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[57]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Range
+                {
+                    alias:    "Range"
+                    refgroup: "/Model Root/PWM Generator1/Carrier counter"
+                    refvar:   "Range"
+                }
+
+            endgroup
+
+            group "Constant10"
+            {
+                block: "Constant"
+            }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Constant2"
+            {
+                block: "Constant"
+            }
+
+                trcref0_CarrCount
+                {
+                    alias:    "CarrCount"
+                    refgroup: "/Model Root/PWM Generator1/Carrier counter"
+                    refvar:   "CarrCount"
+                }
+
+                trcref0_Value
+                {
+                    alias:    "Value"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator1/Carrier counter"
+                    refvar:   "CarrCount"
+                }
+
+            endgroup
+
+            group "Constant3"
+            {
+                block: "Constant"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[31]
+                {
+                    addr:  0x3b978
+                    alias: "Value"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Constant6"
+            {
+                block: "Constant"
+            }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tper"
+                }
+
+                trcref0_Value
+                {
+                    alias:    "Value"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Gain"
+            {
+                block: "Gain"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[56]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Gain
+                {
+                    alias:    "Gain"
+                    flags:    DEPRECATED|HIDDEN
+                    refgroup: "/Model Root/PWM Generator1/Carrier counter"
+                    refvar:   "Range"
+                }
+
+                trcref0_Range
+                {
+                    alias:    "Range"
+                    refgroup: "/Model Root/PWM Generator1/Carrier counter"
+                    refvar:   "Range"
+                }
+
+            endgroup
+
+            group "Gain1"
+            {
+                block: "Gain"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[54]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tper"
+                }
+
+            endgroup
+
+            group "Integrator with\nWrapped State\n(Discrete or Continuous)"
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[10]
+                {
+                    addr:  0x3b978
+                    alias: "WrappedStateLowerValue"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[13]
+                {
+                    addr:  0x3b978
+                    alias: "x0"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[39]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_Tper
+                {
+                    alias:    "Tper"
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tper"
+                }
+
+                group "Discrete"
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[39]
+                    {
+                        addr:  0x3b970
+                        alias: "y"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    group "Compare\nTo Constant"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[11]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_WrappedStateLowerValue
+                        {
+                            alias:    "WrappedStateLowerValue"
+                            refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "WrappedStateLowerValue"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[11]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Compare\nTo Constant1"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[12]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_Tper
+                        {
+                            alias:    "Tper"
+                            refgroup: "/Model Root/PWM Generator1"
+                            refvar:   "Tper"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[12]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Initial"
+                    {
+                        block: "InitialCondition"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[38]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        trcref0_Value
+                        {
+                            alias:    "Value"
+                            flags:    DEPRECATED|HIDDEN
+                            refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "x0"
+                        }
+
+                        trcref0_x0
+                        {
+                            alias:    "x0"
+                            refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                            refvar:   "x0"
+                        }
+
+                    endgroup
+
+                    group "Integrator"
+                    {
+                        block: "DiscreteIntegrator"
+                    }
+
+                        p_1_PWM_withSlaveBITOUT_real_T_0[24]
+                        {
+                            addr:  0x3b978
+                            alias: "gainval"
+                            flags: PARAM
+                            type:  float(64,IEEE)*
+                        }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[39]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                    endgroup
+
+                    group "Logical\nOperator"
+                    {
+                        block: "Logic"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[13]
+                        {
+                            addr:    0x3b974
+                            alias:   "Out1"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                    endgroup
+
+                    group "Reinitialization"
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[37]
+                        {
+                            addr:  0x3b970
+                            alias: "y"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        group "Bias"
+                        {
+                            block: "Bias"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[33]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[34]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain1"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[36]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Rounding\nFunction"
+                        {
+                            block: "Rounding"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[35]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                        group "Sum1"
+                        {
+                            block: "Sum"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[37]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                endgroup
+
+            endgroup
+
+            group "Integrator with\nWrapped State\n(Discrete or Continuous)1"
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[11]
+                {
+                    addr:  0x3b978
+                    alias: "WrappedStateLowerValue"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[52]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref1_Tdelay
+                {
+                    alias:    "Tdelay"
+                    refgroup: "/Model Root/PWM Generator1"
+                    refvar:   "Tdelay"
+                }
+
+                group "Discrete"
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[52]
+                    {
+                        addr:  0x3b970
+                        alias: "y"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    group "Compare\nTo Constant"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[14]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        trcref0_WrappedStateLowerValue
+                        {
+                            alias:    "WrappedStateLowerValue"
+                            refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                            refvar:   "WrappedStateLowerValue"
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[14]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Value
+                            {
+                                alias:    "Value"
+                                flags:    DEPRECATED|HIDDEN
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Compare\nTo Constant1"
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[15]
+                        {
+                            addr:    0x3b974
+                            alias:   "y"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                        group "Compare"
+                        {
+                            block: "RelationalOperator"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_boolean_T_1[15]
+                            {
+                                addr:    0x3b974
+                                alias:   "Out1"
+                                bitmask: 0x1
+                                flags:   OUTPUT|READONLY
+                                range:   < 0 ; 1 >
+                                type:    uint(8)*
+                            }
+
+                        endgroup
+
+                        group "Constant"
+                        {
+                            block: "Constant"
+                        }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                    group "Initial"
+                    {
+                        block: "InitialCondition"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[51]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        trcref0_Tdelay
+                        {
+                            alias:    "Tdelay"
+                            refgroup: "/Model Root/PWM Generator1"
+                            refvar:   "Tdelay"
+                        }
+
+                        trcref0_Value
+                        {
+                            alias:    "Value"
+                            flags:    DEPRECATED|HIDDEN
+                            refgroup: "/Model Root/PWM Generator1"
+                            refvar:   "Tdelay"
+                        }
+
+                    endgroup
+
+                    group "Integrator"
+                    {
+                        block: "DiscreteIntegrator"
+                    }
+
+                        p_1_PWM_withSlaveBITOUT_real_T_0[26]
+                        {
+                            addr:  0x3b978
+                            alias: "gainval"
+                            flags: PARAM
+                            type:  float(64,IEEE)*
+                        }
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[52]
+                        {
+                            addr:  0x3b970
+                            alias: "Out1"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                    endgroup
+
+                    group "Logical\nOperator"
+                    {
+                        block: "Logic"
+                    }
+
+                        p_0_PWM_withSlaveBITOUT_boolean_T_1[16]
+                        {
+                            addr:    0x3b974
+                            alias:   "Out1"
+                            bitmask: 0x1
+                            flags:   OUTPUT|READONLY
+                            range:   < 0 ; 1 >
+                            type:    uint(8)*
+                        }
+
+                    endgroup
+
+                    group "Reinitialization"
+
+                        p_0_PWM_withSlaveBITOUT_real_T_0[50]
+                        {
+                            addr:  0x3b970
+                            alias: "y"
+                            flags: OUTPUT|READONLY
+                            type:  float(64,IEEE)*
+                        }
+
+                        group "Bias"
+                        {
+                            block: "Bias"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[46]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[47]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Gain1"
+                        {
+                            block: "Gain"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[49]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                            trcref0_Tper
+                            {
+                                alias:    "Tper"
+                                refgroup: "/Model Root/PWM Generator1"
+                                refvar:   "Tper"
+                            }
+
+                            trcref1_WrappedStateLowerValue
+                            {
+                                alias:    "WrappedStateLowerValue"
+                                refgroup: "/Model Root/PWM Generator1/Carrier counter/Integrator with\nWrapped State\n(Discrete or Continuous)1"
+                                refvar:   "WrappedStateLowerValue"
+                            }
+
+                        endgroup
+
+                        group "Rounding\nFunction"
+                        {
+                            block: "Rounding"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[48]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                        group "Sum1"
+                        {
+                            block: "Sum"
+                        }
+
+                            p_0_PWM_withSlaveBITOUT_real_T_0[50]
+                            {
+                                addr:  0x3b970
+                                alias: "Out1"
+                                flags: OUTPUT|READONLY
+                                type:  float(64,IEEE)*
+                            }
+
+                        endgroup
+
+                    endgroup
+
+                endgroup
+
+            endgroup
+
+            group "Limitation"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[60]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Constant2"
+                {
+                    block: "Constant"
+                }
+
+                    p_1_PWM_withSlaveBITOUT_real_T_0[25]
+                    {
+                        addr:  0x3b978
+                        alias: "Value"
+                        flags: PARAM
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Switch"
+                {
+                    block: "Switch"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[60]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Threshold
+                    {
+                        alias:    "Threshold"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Limitation1"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[59]
+                {
+                    addr:  0x3b970
+                    alias: "y"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Constant2"
+                {
+                    block: "Constant"
+                }
+
+                    p_1_PWM_withSlaveBITOUT_real_T_0[27]
+                    {
+                        addr:  0x3b978
+                        alias: "Value"
+                        flags: PARAM
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Switch"
+                {
+                    block: "Switch"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[59]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Threshold
+                    {
+                        alias:    "Threshold"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Multiport\nSwitch"
+            {
+                block: "MultiPortSwitch"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[53]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Saturation"
+            {
+                block: "Saturate"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[29]
+                {
+                    addr:  0x3b978
+                    alias: "LowerLimit"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[55]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[28]
+                {
+                    addr:  0x3b978
+                    alias: "UpperLimit"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "scale"
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[45]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Bias"
+                {
+                    block: "Bias"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[41]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref0_Bias
+                    {
+                        alias:    "Bias"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+                group "Constant"
+                {
+                    block: "Constant"
+                }
+
+                    trcref0_Tper
+                    {
+                        alias:    "Tper"
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                    trcref0_Value
+                    {
+                        alias:    "Value"
+                        flags:    DEPRECATED|HIDDEN
+                        refgroup: "/Model Root/PWM Generator1"
+                        refvar:   "Tper"
+                    }
+
+                endgroup
+
+                group "Probe"
+                {
+                    block: "Probe"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[29]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  PWM_withSlaveBITOUT_ArrayDT0_2*
+                    }
+
+                endgroup
+
+                group "Product"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[32]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product1"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[40]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product2"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[42]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Product3"
+                {
+                    block: "Product"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[44]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Rounding\nFunction"
+                {
+                    block: "Rounding"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[43]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Sum"
+                {
+                    block: "Sum"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[31]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+                group "Sum1"
+                {
+                    block: "Sum"
+                }
+
+                    p_0_PWM_withSlaveBITOUT_real_T_0[45]
+                    {
+                        addr:  0x3b970
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Sum3"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[62]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Sum4"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[58]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Sum5"
+            {
+                block: "Sum"
+            }
+
+                p_0_PWM_withSlaveBITOUT_real_T_0[61]
+                {
+                    addr:  0x3b970
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Compare\nTo Zero"
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[10]
+            {
+                addr:    0x3b974
+                alias:   "y"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+            group "Compare"
+            {
+                block: "RelationalOperator"
+            }
+
+                p_0_PWM_withSlaveBITOUT_boolean_T_1[10]
+                {
+                    addr:    0x3b974
+                    alias:   "Out1"
+                    bitmask: 0x1
+                    flags:   OUTPUT|READONLY
+                    range:   < 0 ; 1 >
+                    type:    uint(8)*
+                }
+
+            endgroup
+
+            group "Constant"
+            {
+                block: "Constant"
+            }
+
+                p_1_PWM_withSlaveBITOUT_real_T_0[15]
+                {
+                    addr:  0x3b978
+                    alias: "Value"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Data Type Conversion2"
+        {
+            block: "DataTypeConversion"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[19]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Logical\nOperator"
+        {
+            block: "Logic"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[18]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Relational\nOperator"
+        {
+            block: "RelationalOperator"
+        }
+
+            p_0_PWM_withSlaveBITOUT_boolean_T_1[17]
+            {
+                addr:    0x3b974
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "RTI Data"
+
+    endgroup
+
+    group "Scope"
+    {
+        block: "Scope"
+    }
+
+        p_0_PWM_withSlaveBITOUT_boolean_T_1[9]
+        {
+            addr:    0x3b974
+            alias:   "In1"
+            bitmask: 0x1
+            flags:   READONLY
+            range:   < 0 ; 1 >
+            type:    uint(8)*
+        }
+
+        p_0_PWM_withSlaveBITOUT_boolean_T_1[19]
+        {
+            addr:    0x3b974
+            alias:   "In2"
+            bitmask: 0x1
+            flags:   READONLY
+            range:   < 0 ; 1 >
+            type:    uint(8)*
+        }
+
+    endgroup
+
+endgroup
+
+group "Task Info"
+
+    group "Timer Task 1"
+
+        pRti_TIMERA_OType
+        {
+            addr:  0x3c4cc
+            alias: "overrunCheckType"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_OCnt
+        {
+            addr:  0x3c4d8
+            alias: "overrunCount"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_ORpt
+        {
+            addr:  0x3c4d4
+            alias: "overrunQueueCount"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_OMax
+        {
+            addr:  0x3c4d0
+            alias: "overrunQueueMax"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_Prio
+        {
+            addr:  0x3c4e0
+            alias: "priority"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_STime
+        {
+            addr:  0x3c4c0
+            alias: "sampleTime"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+        pRti_TIMERA_TState
+        {
+            addr:  0x3c4c8
+            alias: "state"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_TCnt
+        {
+            addr:  0x3c4dc
+            alias: "taskCallCount"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+        pRti_TIMERA_TTime
+        {
+            addr:  0x3c4c4
+            alias: "turnaroundTime"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+endgroup
+
+group "Tunable Parameters"
+
+endgroup
+
+

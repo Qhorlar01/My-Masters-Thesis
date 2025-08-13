@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<creator type="key">ControlDesk 23.1</creator>
+	<majorversion type="key">23</majorversion>
+	<minorversion type="key">1</minorversion>
+	<maintenanceversion type="key">0</maintenanceversion>
+	<specialbuildversion type="key"/>
+	<releasename type="key">2023-A</releasename>
+	<experiment>
+		<Creator type="key">ControlDesk</Creator>
+		<MigrationHistory type="key"/>
+		<Name type="key">Experiment_001.CDE</Name>
+		<DisplayName type="key">Experiment_001</DisplayName>
+		<Path type="key">.\Experiment_001</Path>
+		<Flags type="key">4096</Flags>
+		<Type type="key">2</Type>
+		<UniqueID type="key">948399213</UniqueID>
+		<EntityID type="key">{EB564E2C-DF0E-46E0-83EA-9997CA194998}</EntityID>
+		<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+		<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+		<ItemInfoDescr type="key"/>
+		<ItemInfoAddInfoDb type="key"/>
+		<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		<item>
+			<Component type="key">VariablesManagement</Component>
+			<Name type="key">CalculatedVariables.vdp</Name>
+			<DisplayName type="key">CalculatedVariables.vdp</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">18692</Flags>
+			<Type type="key">4</Type>
+			<UniqueID type="key">401294939</UniqueID>
+			<EntityID type="key">{E6415FAC-915B-4B51-92DB-331FC29604EB}</EntityID>
+			<ItemInfoDate type="key">2025-07-15 11:25:02</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		</item>
+		<item>
+			<Targets type="key">experiment</Targets>
+			<Name type="key">Experiment_001</Name>
+			<DisplayName type="key">Experiment_001</DisplayName>
+			<Path type="key">..</Path>
+			<Flags type="key">4100</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">450199621</UniqueID>
+			<EntityID type="key">{F7C8BD19-8DA7-4CEB-A1A0-784694F5B1F0}</EntityID>
+			<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			<item>
+				<Targets type="key">instrumentation</Targets>
+				<Name type="key">Experiment Layouts</Name>
+				<DisplayName type="key">Experiment Layouts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">160573871</UniqueID>
+				<EntityID type="key">{F97DB711-9C7C-4466-9B6B-955E7228BEE9}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				<item>
+					<Name type="key">Experiment_001.cdc</Name>
+					<DisplayName type="key">Experiment_001.cdc</DisplayName>
+					<Path type="key">.\Experiment Layouts</Path>
+					<Flags type="key">4100</Flags>
+					<Type type="key">4</Type>
+					<UniqueID type="key">562858927</UniqueID>
+					<EntityID type="key">{3094590D-6075-4260-981F-8EF71C3A71EC}</EntityID>
+					<ItemInfoDate type="key">2025-07-15 11:25:03</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">Instrumentation</Component>
+					<Name type="key">Layout1.lay</Name>
+					<DisplayName type="key">Layout1.lay</DisplayName>
+					<Path type="key">.\Experiment Layouts</Path>
+					<Flags type="key">16448</Flags>
+					<Type type="key">10</Type>
+					<UniqueID type="key">651275576</UniqueID>
+					<EntityID type="key">{EF1DC87F-4DDC-46B6-9E8E-CB3617D5E2D2}</EntityID>
+					<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				</item>
+			</item>
+			<item>
+				<Targets type="key">devicemanagement,platformmanagement,diagnosticsmanagement</Targets>
+				<Name type="key">Hardware Configurations</Name>
+				<DisplayName type="key">Hardware Configurations</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">602602036</UniqueID>
+				<EntityID type="key">{3DF84367-C84C-4AF4-9476-096188A633A4}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				<item>
+					<Component type="key">PlatformManagement</Component>
+					<Targets type="key">Device::20645213-6ffc-4df7-954a-3d279c6b7691</Targets>
+					<RestoreInfopmdn type="key">Platform</RestoreInfopmdn>
+					<RestoreInfopmid type="key">20645213-6ffc-4df7-954a-3d279c6b7691</RestoreInfopmid>
+					<Name type="key">20645213-6ffc-4df7-954a-3d279c6b7691</Name>
+					<DisplayName type="key">Platform [DS1104 R&amp;D Controller Board, assigned to 'ds1104']</DisplayName>
+					<Flags type="key">128</Flags>
+					<ExtendedFlags type="key">3072</ExtendedFlags>
+					<Type type="key">6</Type>
+					<UniqueID type="key">681646023</UniqueID>
+					<EntityID type="key">{F694F56F-14E2-4C25-BC69-E07290A2FC53}</EntityID>
+					<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">pwm_withslavebitout.sdf</Name>
+						<DisplayName type="key">pwm_withslavebitout.sdf</DisplayName>
+						<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+						<Flags type="key">18704</Flags>
+						<Type type="key">7</Type>
+						<UniqueID type="key">129362160</UniqueID>
+						<EntityID type="key">{77024D2A-B1E1-4ACB-81AF-DD4509F8CF73}</EntityID>
+						<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">pwm_withslavebitout.vdp</Name>
+							<DisplayName type="key">pwm_withslavebitout.vdp</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">846177366</UniqueID>
+							<EntityID type="key">{3231CDDF-C827-4BB8-BCD0-816659733E82}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:06</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">.metadata</Name>
+							<DisplayName type="key">.metadata</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">736351702</UniqueID>
+							<EntityID type="key">{5DFF417C-065D-4B5C-8D79-B97E1C20857D}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">pwm_withslavebitout.map</Name>
+							<DisplayName type="key">pwm_withslavebitout.map</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">469963033</UniqueID>
+							<EntityID type="key">{0BC60708-603C-4255-935D-D461DB0891AC}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">pwm_withslavebitout.ppc</Name>
+							<DisplayName type="key">pwm_withslavebitout.ppc</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">835037791</UniqueID>
+							<EntityID type="key">{F2083B96-9F25-4575-953B-6E33700A9FE0}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">pwm_withslavebitout.trc</Name>
+							<DisplayName type="key">pwm_withslavebitout.trc</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">495228428</UniqueID>
+							<EntityID type="key">{1B368101-9C10-4C95-BA9C-F8C3C6F9EF74}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">VariablesManagement</Component>
+							<Name type="key">pwm_withslavebitout.dsbuildinfo</Name>
+							<DisplayName type="key">pwm_withslavebitout.dsbuildinfo</DisplayName>
+							<Path type="key">.\Variable Descriptions\pwm_withslavebitout.sdf</Path>
+							<Flags type="key">18692</Flags>
+							<Type type="key">4</Type>
+							<UniqueID type="key">988888692</UniqueID>
+							<EntityID type="key">{A25B34C8-596A-477C-A81E-FC8FC62E937B}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+							<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">DataSetManager</Component>
+							<Name type="key">Data Sets</Name>
+							<DisplayName type="key">Data Sets</DisplayName>
+							<Path type="key">.\Data Sets</Path>
+							<Flags type="key">65798</Flags>
+							<ExtendedFlags type="key">132</ExtendedFlags>
+							<Type type="key">3</Type>
+							<UniqueID type="key">537571020</UniqueID>
+							<EntityID type="key">{15D21DBB-5EC1-4FEA-94FB-F8CFE10AB343}</EntityID>
+							<ItemInfoDate type="key">2025-07-15 11:25:05</ItemInfoDate>
+							<ItemInfoDescr type="key"/>
+							<ItemInfoAddInfoDb type="key"/>
+							<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+						</item>
+					</item>
+				</item>
+			</item>
+			<item>
+				<Targets type="key">variablesmanagement</Targets>
+				<Name type="key">Variable Descriptions</Name>
+				<DisplayName type="key">Variable Descriptions</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">260</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">340924367</UniqueID>
+				<EntityID type="key">{3DB40A34-689E-4B1E-AEEF-D1CF32F70CFB}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">datasetmanager</Targets>
+				<Name type="key">Data Sets</Name>
+				<DisplayName type="key">Data Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">260</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">562311422</UniqueID>
+				<EntityID type="key">{C83A8FCC-BAFD-400B-9E18-617E4895A1B4}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">mappings</Targets>
+				<Name type="key">Mappings</Name>
+				<DisplayName type="key">Mappings</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">627246294</UniqueID>
+				<EntityID type="key">{310AE6CC-4DED-41F2-88C5-468271279E59}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">.metadata</Name>
+					<DisplayName type="key">.metadata</DisplayName>
+					<Path type="key">.\Mappings</Path>
+					<Flags type="key">18692</Flags>
+					<Type type="key">4</Type>
+					<UniqueID type="key">771620895</UniqueID>
+					<EntityID type="key">{2A9ADA19-E954-4792-8376-C82878EDA8B0}</EntityID>
+					<ItemInfoDate type="key">2025-07-15 11:25:06</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+				</item>
+			</item>
+			<item>
+				<Targets type="key">measuredatamanagement</Targets>
+				<Name type="key">Measurement Data</Name>
+				<DisplayName type="key">Measurement Data</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">897080284</UniqueID>
+				<EntityID type="key">{A90F340D-8E97-4A4D-9FDA-7D0F0E42DEF8}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">variablefilters,.vfex</Targets>
+				<Docs type="key">.vfex</Docs>
+				<Name type="key">Variable Filters</Name>
+				<DisplayName type="key">Variable Filters</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">950432038</UniqueID>
+				<EntityID type="key">{55988E54-9BC0-4B40-BED3-ED6FD52F5A70}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.vfex</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">labellists,.lab</Targets>
+				<Docs type="key">.lab,.txt</Docs>
+				<Name type="key">Label Lists</Name>
+				<DisplayName type="key">Label Lists</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">626039528</UniqueID>
+				<EntityID type="key">{6C452F9E-9209-4285-A0D3-887D30DA6D59}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.lab,.txt</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">diagnosticsmanagement_reports,.rtf,.pdf,.html,.xml,.txt,.csv</Targets>
+				<Docs type="key">.rtf,.pdf,.html,.txt,.csv</Docs>
+				<Name type="key">Reports</Name>
+				<DisplayName type="key">Reports</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">797969686</UniqueID>
+				<EntityID type="key">{25F668A9-667E-4E4D-8D12-622CE6A0F938}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.rtf,.pdf,.html,.txt,.csv</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">pythonscriptcomponent</Targets>
+				<Name type="key">Python Scripts</Name>
+				<DisplayName type="key">Python Scripts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">826955977</UniqueID>
+				<EntityID type="key">{090ECF24-01D7-492A-9010-4B15C883716D}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">signaleditor</Targets>
+				<Name type="key">Signal Generators</Name>
+				<DisplayName type="key">Signal Generators</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">1061615788</UniqueID>
+				<EntityID type="key">{F4FF03B1-E21B-4A63-A4CC-8A5A1A38442F}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">busnavigator,.xml</Targets>
+				<Name type="key">BusNavigator</Name>
+				<DisplayName type="key">BusNavigator</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">260</Flags>
+				<ExtendedFlags type="key">256</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">478931129</UniqueID>
+				<EntityID type="key">{035D75F6-45C0-4108-8FFC-E9E5F7D17773}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">xilapieesport</Targets>
+				<Name type="key">XIL API EESPorts</Name>
+				<DisplayName type="key">XIL API EESPorts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">847602662</UniqueID>
+				<EntityID type="key">{9BC16D8F-14A9-43C4-8064-4E7A4F41FE3D}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:01</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">AutomationCustomData.json</Name>
+			<DisplayName type="key">AutomationCustomData.json</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<Type type="key">4</Type>
+			<UniqueID type="key">873225226</UniqueID>
+			<EntityID type="key">{BDF024AE-5D94-4054-9EB8-6EFB130888D8}</EntityID>
+			<ItemInfoDate type="key">2025-07-15 11:25:04</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+		</item>
+		<item>
+			<Name type="key">Events</Name>
+			<DisplayName type="key">Events</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<ExtendedFlags type="key">4</ExtendedFlags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">853101084</UniqueID>
+			<EntityID type="key">{3BB31368-084B-419D-9500-4EAD45F6FE3F}</EntityID>
+			<ItemInfoDate type="key">2025-07-15 11:25:06</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			<item>
+				<Name type="key">Experiment.events</Name>
+				<DisplayName type="key">Experiment.events</DisplayName>
+				<Path type="key">.\Events</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">52</Type>
+				<UniqueID type="key">443827543</UniqueID>
+				<EntityID type="key">{37DA26E9-D731-4790-AC4C-7C8157EDB95D}</EntityID>
+				<ItemInfoDate type="key">2025-07-15 11:25:06</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">qaromose</ItemInfoAuthor>
+			</item>
+		</item>
+	</experiment>
+	<ProjectExperiment/>
+	<DataSetManager>
+		<Version>
+			<Version type="key">2</Version>
+		</Version>
+		<Work/>
+		<ActiveWork/>
+		<Reference/>
+		<ActiveReference/>
+		<Master/>
+		<ActiveMaster/>
+		<InitialMaster/>
+		<Incomplete/>
+		<IncompleteReadonly/>
+		<DataSet/>
+		<Readonly/>
+		<AutomaticDownload/>
+	</DataSetManager>
+	<PlatformManagement>
+		<SimulationTimeGroupSupported type="key">-1</SimulationTimeGroupSupported>
+		<DeviceFactory>
+			<Device>
+				<DeviceName type="key">20645213-6ffc-4df7-954a-3d279c6b7691</DeviceName>
+				<DisplayName type="key">Platform</DisplayName>
+				<DeviceType type="key">210</DeviceType>
+				<DeviceConfiguration/>
+				<applications/>
+				<AssignmentConfiguration>
+					<AssignmentInfo>
+						<AliasName type="key"/>
+						<BoardName type="key">ds1104</BoardName>
+						<ConnectionType type="key">0</ConnectionType>
+						<MACAddress type="key"/>
+						<Mode type="key">1</Mode>
+						<Children type="key">0</Children>
+						<NetClient type="key"/>
+						<PlatformType type="key">16</PlatformType>
+						<PortAddress type="key">0</PortAddress>
+						<ProcessorName type="key"/>
+						<SerialNumber type="key"/>
+						<TopologyCheck type="key">0</TopologyCheck>
+						<AssignmentProperties>
+							<AssignmentProperty>
+								<Name type="key">PlatformType</Name>
+								<Value type="key">16</Value>
+								<Type type="key">System.Int32</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">Mode</Name>
+								<Value type="key">1</Value>
+								<Type type="key">System.Int32</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">ConnectionType</Name>
+								<Value type="key">0</Value>
+								<Type type="key">System.Int32</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">Children</Name>
+								<Value type="key">0</Value>
+								<Type type="key">System.Int32</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">BoardName</Name>
+								<Value type="key">ds1104</Value>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">MACAddress</Name>
+								<Value type="key"/>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">NetClient</Name>
+								<Value type="key"/>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">PortAddress</Name>
+								<Value type="key">0</Value>
+								<Type type="key">System.Int32</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">SerialNumber</Name>
+								<Value type="key"/>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">ProcessorName</Name>
+								<Value type="key"/>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">TopologyCheck</Name>
+								<Value type="key">False</Value>
+								<Type type="key">System.Boolean</Type>
+							</AssignmentProperty>
+							<AssignmentProperty>
+								<Name type="key">AliasName</Name>
+								<Value type="key"/>
+								<Type type="key">System.String</Type>
+							</AssignmentProperty>
+						</AssignmentProperties>
+					</AssignmentInfo>
+				</AssignmentConfiguration>
+				<GeneralSettings>
+					<StartOnlineCalibrationBehavior type="key">5</StartOnlineCalibrationBehavior>
+					<DeviceEnableResynchonisation type="key">1</DeviceEnableResynchonisation>
+					<MeasurementService type="key">0</MeasurementService>
+					<ResumeOnlineCalibrationBehaviour type="key">5</ResumeOnlineCalibrationBehaviour>
+					<DisplayStatusInformation type="key">-1</DisplayStatusInformation>
+					<DisplayAutomaticReconnectBehavior type="key">1</DisplayAutomaticReconnectBehavior>
+					<EnablePlatform type="key">1</EnablePlatform>
+					<EnableDynamicProperties type="key">1</EnableDynamicProperties>
+				</GeneralSettings>
+				<SubstituteFactory/>
+			</Device>
+		</DeviceFactory>
+	</PlatformManagement>
+	<DiagnosticsManagement/>
+	<Instrumentation Version="1"/>
+	<VariablesManagement>
+		<Favorites>
+			<Labels/>
+		</Favorites>
+	</VariablesManagement>
+	<MeasureDataManagement>
+		<TriggerRules>
+			<Version type="key">2</Version>
+		</TriggerRules>
+		<BookmarkTypes>
+			<BookmarkType>
+				<TypeID type="key">1</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">2</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">3</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">5</TypeID>
+				<RecordingActive type="key">0</RecordingActive>
+				<VisualizationActive type="key">0</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">6</TypeID>
+				<RecordingActive type="key">0</RecordingActive>
+				<VisualizationActive type="key">0</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">8</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">9</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">12</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">13</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">14</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+			<BookmarkType>
+				<TypeID type="key">15</TypeID>
+				<RecordingActive type="key">1</RecordingActive>
+				<VisualizationActive type="key">1</VisualizationActive>
+			</BookmarkType>
+		</BookmarkTypes>
+		<ProjectExperimentSettings>
+			<ShowMeasurementLinks type="key">0</ShowMeasurementLinks>
+		</ProjectExperimentSettings>
+	</MeasureDataManagement>
+	<MeasurementConfiguration>
+		<NextUniqueKey type="key">4</NextUniqueKey>
+		<SortedColumn type="key">4</SortedColumn>
+		<SortAscending type="key">-1</SortAscending>
+		<SignalList/>
+		<Platforms>
+			<Platform>
+				<Name type="key">20645213-6ffc-4df7-954a-3d279c6b7691</Name>
+				<FilteredRastersView type="key">1</FilteredRastersView>
+				<UseDefaultRasterForParameters type="key">0</UseDefaultRasterForParameters>
+				<DefaultRaster type="key">HostService</DefaultRaster>
+				<Rasters>
+					<PlatformTriggered>
+						<Name type="key">HostService</Name>
+						<AutoRepeatEnabled type="key">1</AutoRepeatEnabled>
+						<AutoRepeatBehavior type="key">1</AutoRepeatBehavior>
+						<MultiCaptureHistoryEnabled type="key">0</MultiCaptureHistoryEnabled>
+						<DownsamplingFactor type="key">1</DownsamplingFactor>
+						<StartTrigger type="key">2</StartTrigger>
+						<StopTrigger type="key">3</StopTrigger>
+					</PlatformTriggered>
+				</Rasters>
+				<EnabledHardwarePollingRasters/>
+				<PlatformTriggers>
+					<PlatformTrigger>
+						<UniqueKey type="key">2</UniqueKey>
+						<Name type="key">Platform Trigger 1</Name>
+						<Condition type="key"/>
+						<Delay type="key">0</Delay>
+						<Enabled type="key">0</Enabled>
+						<Timeout type="key">0</Timeout>
+						<TimeoutEnabled type="key">0</TimeoutEnabled>
+						<VariableMappings>
+							<Platform type="key"/>
+						</VariableMappings>
+					</PlatformTrigger>
+				</PlatformTriggers>
+			</Platform>
+			<Platform>
+				<Name type="key">__Calculated</Name>
+				<FilteredRastersView type="key">1</FilteredRastersView>
+				<UseDefaultRasterForParameters type="key">0</UseDefaultRasterForParameters>
+				<Rasters>
+					<Raster>
+						<Name type="key">Merged</Name>
+						<MinimumSamplingPeriod type="key">0.001</MinimumSamplingPeriod>
+					</Raster>
+				</Rasters>
+				<EnabledHardwarePollingRasters/>
+				<PlatformTriggers/>
+			</Platform>
+		</Platforms>
+		<DurationTriggers>
+			<DurationTrigger>
+				<UniqueKey type="key">3</UniqueKey>
+				<Name type="key">Duration Trigger 1</Name>
+				<Delay type="key">0</Delay>
+				<Duration type="key">0.01</Duration>
+				<Enabled type="key">0</Enabled>
+			</DurationTrigger>
+		</DurationTriggers>
+		<SampleCountTriggers/>
+		<Acquisition>
+			<MeasurementBufferSize type="key">60</MeasurementBufferSize>
+			<BufferOverflowWarningEnabled type="key">0</BufferOverflowWarningEnabled>
+			<BufferOverflowWarningTime type="key">10</BufferOverflowWarningTime>
+			<SaveMeasurementBuffer>
+				<AddToExperimentEnabled type="key">-1</AddToExperimentEnabled>
+				<AutomaticSaveDialogEnabled type="key">0</AutomaticSaveDialogEnabled>
+				<AutomaticExportEnabled type="key">0</AutomaticExportEnabled>
+				<AutomaticExportFileNamePrefix type="key">bufexp_</AutomaticExportFileNamePrefix>
+				<AutomaticExportFileType type="key">ASAM MDF 4.1 Files (*.mf4)</AutomaticExportFileType>
+				<AutomaticExportFolder type="key"/>
+				<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
+				<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
+				<AutomaticNamingStartIndex type="key">1</AutomaticNamingStartIndex>
+				<Description type="key"/>
+				<FileNamePrefix type="key">buf_</FileNamePrefix>
+				<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
+				<RecordingFileType type="key">ASAM MDF 4.1 Files (*.mf4)</RecordingFileType>
+				<MeasurementTimestampsEnabled type="key">0</MeasurementTimestampsEnabled>
+			</SaveMeasurementBuffer>
+			<SaveDisplayedData>
+				<AddToExperimentEnabled type="key">-1</AddToExperimentEnabled>
+				<AutomaticSaveDialogEnabled type="key">0</AutomaticSaveDialogEnabled>
+				<AutomaticExportEnabled type="key">0</AutomaticExportEnabled>
+				<AutomaticExportFileNamePrefix type="key">sddexp_</AutomaticExportFileNamePrefix>
+				<AutomaticExportFileType type="key">ASAM MDF 4.1 Files (*.mf4)</AutomaticExportFileType>
+				<AutomaticExportFolder type="key"/>
+				<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
+				<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
+				<AutomaticNamingStartIndex type="key">1</AutomaticNamingStartIndex>
+				<Description type="key"/>
+				<FileNamePrefix type="key">sdd_</FileNamePrefix>
+				<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
+				<RecordingFileType type="key">ASAM MDF 4.1 Files (*.mf4)</RecordingFileType>
+				<MeasurementTimestampsEnabled type="key">0</MeasurementTimestampsEnabled>
+			</SaveDisplayedData>
+			<SaveFlightRecorderData>
+				<AddToExperimentEnabled type="key">-1</AddToExperimentEnabled>
+				<AutomaticSaveDialogEnabled type="key">0</AutomaticSaveDialogEnabled>
+				<AutomaticExportEnabled type="key">0</AutomaticExportEnabled>
+				<AutomaticExportFileNamePrefix type="key">flightrecexp_</AutomaticExportFileNamePrefix>
+				<AutomaticExportFileType type="key">ASAM MDF 4.1 Files (*.mf4)</AutomaticExportFileType>
+				<AutomaticExportFolder type="key"/>
+				<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
+				<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
+				<AutomaticNamingStartIndex type="key">1</AutomaticNamingStartIndex>
+				<Description type="key"/>
+				<FileNamePrefix type="key">flightrec_</FileNamePrefix>
+				<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
+				<RecordingFileType type="key">ASAM MDF 4.1 Files (*.mf4)</RecordingFileType>
+			</SaveFlightRecorderData>
+		</Acquisition>
+		<Recorders>
+			<Recorder>
+				<Name type="key">Recorder 1</Name>
+				<UniqueKey type="key">1</UniqueKey>
+				<AutomaticSignalConfigurationEnabled type="key">-1</AutomaticSignalConfigurationEnabled>
+				<WriteToFileEnabled type="key">-1</WriteToFileEnabled>
+				<MeasurementTimestampsEnabled type="key">0</MeasurementTimestampsEnabled>
+				<StartAudioSignalEnabled type="key">0</StartAudioSignalEnabled>
+				<StopAudioSignalEnabled type="key">0</StopAudioSignalEnabled>
+				<Active type="key">-1</Active>
+				<StartCondition>
+					<Enabled type="key">0</Enabled>
+					<RecordingCycleCount type="key">1</RecordingCycleCount>
+					<SelectedTriggerRule type="key"/>
+					<TriggerDelay type="key">0</TriggerDelay>
+				</StartCondition>
+				<StopCondition>
+					<RecordingStopWarningEnabled type="key">0</RecordingStopWarningEnabled>
+					<RecordingStopWarningTime type="key">60</RecordingStopWarningTime>
+					<SelectedTriggerRule type="key"/>
+					<Type type="key">0</Type>
+					<TimeLimit type="key">3600</TimeLimit>
+					<TriggerDelay type="key">0</TriggerDelay>
+				</StopCondition>
+				<StorageInformation>
+					<AddToExperimentEnabled type="key">-1</AddToExperimentEnabled>
+					<AutomaticSaveDialogEnabled type="key">0</AutomaticSaveDialogEnabled>
+					<AutomaticExportEnabled type="key">0</AutomaticExportEnabled>
+					<AutomaticExportFileNamePrefix type="key">exp1_</AutomaticExportFileNamePrefix>
+					<AutomaticExportFileType type="key">ASAM MDF 4.1 Files (*.mf4)</AutomaticExportFileType>
+					<AutomaticExportFolder type="key"/>
+					<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
+					<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
+					<AutomaticNamingStartIndex type="key">1</AutomaticNamingStartIndex>
+					<Description type="key"/>
+					<FileNamePrefix type="key">rec1_</FileNamePrefix>
+					<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
+					<RecordingFileType type="key">ASAM MDF 4.1 Files (*.mf4)</RecordingFileType>
+				</StorageInformation>
+				<SignalList/>
+			</Recorder>
+		</Recorders>
+	</MeasurementConfiguration>
+	<BusNavigator/>
+	<SignalEditor/>
+	<XILAPIEESPort>
+		<XILAPIEESPort>
+			<EESPorts type="key">&lt;EESPorts /&gt;</EESPorts>
+		</XILAPIEESPort>
+	</XILAPIEESPort>
+	<PythonScriptComponent/>
+</Root>

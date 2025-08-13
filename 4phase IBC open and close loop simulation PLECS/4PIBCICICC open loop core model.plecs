@@ -1,0 +1,4710 @@
+Plecs {
+  Name          "4PIBCICICC open loop core model"
+  Version       "4.8"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "0.05"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-6"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-4"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "2"
+  DatatypeInheritanceConflictMsg "1"
+  ContSampleTimeConflictMsg "1"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands "%--noyau type 56/24/19\nAe=178e-6; %effective area\n"
+"Le=77e-3; %effective length\nAL=3100e-9;\nur=1350;\nAe_outerleg=Ae/2;\nB_sat="
+"0.52;\nAirgap=0.45e-3;\nN=16; %nbre de spires\nrL=15e-3;\n"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "1"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 27; 1920, 997]
+    ZoomFactor    0.812526
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Diode
+      Name          "D1"
+      Show          on
+      Position      [1520, 70]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "C1"
+      Show          on
+      Position      [1625, 600]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "1000e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "48"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R1"
+      Show          on
+      Position      [1670, 600]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "5"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [1790, 585]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 193; 1480, 1028]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAXIAAAAY/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABcgAAABQAP///wAABcgAAAMoAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"wAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm1"
+      Show          on
+      Position      [1735, 585]
+      Direction     up
+      Flipped       off
+      LabelPosition west
+    }
+    Component {
+      Type          Diode
+      Name          "D2"
+      Show          on
+      Position      [1520, 280]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Mosfet
+      Name          "FET2"
+      Show          on
+      Position      [1185, 705]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          on
+      Position      [885, 70]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am2"
+      Show          on
+      Position      [890, 295]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          DCVoltageSource
+      Name          "V_dc"
+      Show          on
+      Position      [50, 795]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "14.4"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am3"
+      Show          on
+      Position      [50, 745]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Scope
+      Name          "Scope3"
+      Show          on
+      Position      [20, 700]
+      Direction     left
+      Flipped       off
+      LabelPosition east
+      Location      [282, 104; 1200, 975]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAA5YAAANMAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAA"
+"AAZAAAAAUAAABkAAAA2AAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC0AAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Mosfet
+      Name          "FET1"
+      Show          on
+      Position      [1085, 705]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          PulseGenerator
+      Name          "PWM"
+      Show          on
+      Position      [1020, 705]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Hi"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lo"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "50000"
+        Show          off
+      }
+      Parameter {
+        Variable      "DutyCycle"
+        Value         "0.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Delay"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          PulseGenerator
+      Name          "PWM1"
+      Show          on
+      Position      [1130, 705]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Hi"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lo"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "50000"
+        Show          off
+      }
+      Parameter {
+        Variable      "DutyCycle"
+        Value         "0.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Delay"
+        Value         "1/(4*50000)"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope1"
+      Show          on
+      Position      [1050, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [462, 173; 1604, 940]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACovwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAAOOAA"
+"ACHwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAAqIAAABmAP///wAAAAMAAAUsAAAAW/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABSwAAABQAP///wAABHYAAALkAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAEAAAAYAFMAYQB2AGUAZAAgAHYAaQBlAHcAIAAxP6n/mMeFN"
+"Xs/qh+Hl0JApQAAAAEBQCqsDe+o0X5AMsCscUPp7wE/qgpSaVlfHz+qFM7EHdGjAA=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAA"
+"AAZAAAAAkAAABkAAAA2AAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC0AAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "0"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "2"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          SignalMux
+      Name          "Mux"
+      Show          off
+      Position      [990, 160]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "4"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D3"
+      Show          on
+      Position      [1520, 355]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Mosfet
+      Name          "FET3"
+      Show          on
+      Position      [1320, 705]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          PulseGenerator
+      Name          "PWM2"
+      Show          on
+      Position      [1255, 705]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Hi"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lo"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "50000"
+        Show          off
+      }
+      Parameter {
+        Variable      "DutyCycle"
+        Value         "0.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Delay"
+        Value         "2/(4*50000)"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D4"
+      Show          on
+      Position      [1525, 460]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Mosfet
+      Name          "FET4"
+      Show          on
+      Position      [1470, 705]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          PulseGenerator
+      Name          "PWM3"
+      Show          on
+      Position      [1400, 705]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Hi"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lo"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "50000"
+        Show          off
+      }
+      Parameter {
+        Variable      "DutyCycle"
+        Value         "0.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Delay"
+        Value         "3/(4*50000)"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am4"
+      Show          on
+      Position      [910, 355]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am5"
+      Show          on
+      Position      [935, 460]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L1"
+      Show          on
+      Position      [225, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "Ro1"
+      Show          on
+      Position      [170, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "Rc"
+      Show          on
+      Position      [170, 180]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "R2"
+      Show          on
+      Position      [175, 250]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L21"
+      Show          on
+      Position      [255, 250]
+      Direction     left
+      Flipped       on
+      LabelPosition north
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat1"
+      Show          on
+      Position      [300, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat2"
+      Show          on
+      Position      [300, 180]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat3"
+      Show          on
+      Position      [300, 250]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat4"
+      Show          on
+      Position      [110, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat5"
+      Show          on
+      Position      [110, 180]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat6"
+      Show          on
+      Position      [105, 250]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L23"
+      Show          on
+      Position      [295, 345]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air3"
+      Show          on
+      Position      [205, 345]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air4"
+      Show          on
+      Position      [210, 410]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air5"
+      Show          on
+      Position      [210, 485]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L3"
+      Show          on
+      Position      [290, 485]
+      Direction     left
+      Flipped       on
+      LabelPosition north
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat7"
+      Show          on
+      Position      [355, 345]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat8"
+      Show          on
+      Position      [355, 410]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat9"
+      Show          on
+      Position      [350, 485]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat10"
+      Show          on
+      Position      [150, 345]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat11"
+      Show          on
+      Position      [150, 410]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat12"
+      Show          on
+      Position      [150, 485]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L14"
+      Show          on
+      Position      [690, 95]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air6"
+      Show          on
+      Position      [600, 95]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air7"
+      Show          on
+      Position      [605, 160]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air8"
+      Show          on
+      Position      [605, 230]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L41"
+      Show          on
+      Position      [685, 235]
+      Direction     left
+      Flipped       on
+      LabelPosition north
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat13"
+      Show          on
+      Position      [775, 95]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat14"
+      Show          on
+      Position      [775, 160]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat15"
+      Show          on
+      Position      [770, 235]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat16"
+      Show          on
+      Position      [545, 95]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat17"
+      Show          on
+      Position      [545, 160]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat18"
+      Show          on
+      Position      [540, 230]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L7"
+      Show          on
+      Position      [540, 475]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air9"
+      Show          on
+      Position      [490, 475]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air10"
+      Show          on
+      Position      [495, 540]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_air"
+      Name          "P_air11"
+      Show          on
+      Position      [495, 610]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -8; 10, 8]
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Airgap"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -15]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 15]
+        Direction     down
+      }
+    }
+    Component {
+      Type          MagneticInterface
+      Name          "L8"
+      Show          on
+      Position      [535, 615]
+      Direction     left
+      Flipped       on
+      LabelPosition north
+      Parameter {
+        Variable      "n"
+        Value         "N"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat19"
+      Show          on
+      Position      [625, 475]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat20"
+      Show          on
+      Position      [625, 540]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat21"
+      Show          on
+      Position      [620, 615]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat22"
+      Show          on
+      Position      [435, 475]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat23"
+      Show          on
+      Position      [435, 540]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Magnetic/Components/P_sat"
+      Name          "P_sat24"
+      Show          on
+      Position      [430, 610]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -8; 15, 8]
+      Parameter {
+        Variable      "fitting"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "A"
+        Value         "Ae_outerleg"
+        Show          off
+      }
+      Parameter {
+        Variable      "l"
+        Value         "Le"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_unsat"
+        Value         "ur"
+        Show          off
+      }
+      Parameter {
+        Variable      "mu_r_sat"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "B_sat"
+        Value         "B_sat"
+        Show          off
+      }
+      Parameter {
+        Variable      "F_init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          MagneticPort
+        Position      [0, 20]
+        Direction     down
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          on
+      Position      [220, 20]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Rc"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto"
+      Show          off
+      Position      [290, 20]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_12"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe1"
+      Show          on
+      Position      [565, 15]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_air7"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto1"
+      Show          off
+      Position      [635, 15]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_41"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe2"
+      Show          on
+      Position      [180, 845]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_air4"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto2"
+      Show          off
+      Position      [250, 845]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_23"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe3"
+      Show          on
+      Position      [485, 850]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_air10"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto3"
+      Show          off
+      Position      [555, 850]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_34"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope2"
+      Show          on
+      Position      [2180, 125]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 333; 453, 647]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABQPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAAOOAA"
+"ACHwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAAUAAAABmAP///wAAAAMAAAWoAAAAW/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABagAAABQAP///wAAAcUAAAEfAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAEAAAAYAFMAYQB2AGUAZAAgAHYAaQBlAHcAIAAxP6n/mMeFN"
+"Xs/qh+Hl0JApQAAAAEBQCqsDe+o0X5AMsCscUPp7wE/qgpSaVlfHz+qFM7EHdGjAA=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAA2AAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC0AAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "0"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          SignalMux
+      Name          "Mux1"
+      Show          off
+      Position      [2115, 135]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "4"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From"
+      Show          off
+      Position      [2065, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_12"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From1"
+      Show          off
+      Position      [2055, 140]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_23"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From2"
+      Show          off
+      Position      [2045, 165]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_34"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From3"
+      Show          off
+      Position      [2055, 185]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "airgapC_41"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe4"
+      Show          on
+      Position      [2255, 125]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat2"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat8"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat20"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat14"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope4"
+      Show          on
+      Position      [2335, 125]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 335; 453, 619]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcUAAAEBAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe5"
+      Show          on
+      Position      [2255, 70]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat1"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat7"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat19"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat13"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope5"
+      Show          on
+      Position      [2335, 70]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 27; 456, 316]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcgAAAEGAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe6"
+      Show          on
+      Position      [2255, 175]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat3"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat9"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat21"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat15"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope6"
+      Show          on
+      Position      [2335, 175]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 661; 457, 951]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAckAAAEHAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe7"
+      Show          on
+      Position      [2095, 60]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Ro1"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air3"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air9"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air6"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope7"
+      Show          on
+      Position      [2175, 60]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [-1130, -1; -677, 284]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcUAAAECAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAA"
+"AAZAAAAAUAAABkAAAAwgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACeAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe8"
+      Show          on
+      Position      [2095, 220]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "R2"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air5"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air11"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_air8"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope8"
+      Show          on
+      Position      [2175, 220]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 657; 452, 948]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcQAAAEIAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAAyAAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACkAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe9"
+      Show          on
+      Position      [1865, 120]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat5"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat11"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat23"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat17"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope9"
+      Show          on
+      Position      [1945, 120]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 333; 456, 625]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcgAAAEJAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAA"
+"AAZAAAAAkAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe10"
+      Show          on
+      Position      [1865, 65]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat4"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat10"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat22"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat16"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope10"
+      Show          on
+      Position      [1945, 65]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 27; 460, 340]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcwAAAEeAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAA"
+"AAZAAAAAkAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe11"
+      Show          on
+      Position      [1865, 170]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "P_sat6"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat12"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat24"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+      Probe {
+        Component     "P_sat18"
+        Path          ""
+        Signals       {"Flux density"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope11"
+      Show          on
+      Position      [1945, 170]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 658; 459, 948]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAcsAAAEHAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
+"AAZAAAAAEAAABkAAAAygAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACmAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe12"
+      Show          on
+      Position      [855, 640]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Step"
+        Path          ""
+        Signals       {"Output"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope12"
+      Show          on
+      Position      [920, 640]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [201, 240; 1681, 905]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAXIAAAAY/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABcgAAABQAP///wAABcgAAAJ+AAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAA"
+"AAZAAAAAUAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Switch
+      Name          "S1"
+      Show          on
+      Position      [1355, 1060]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "s_init"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Step
+      Name          "Step"
+      Show          on
+      Position      [1285, 1060]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Time"
+        Value         "0.35"
+        Show          off
+      }
+      Parameter {
+        Variable      "Before"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "After"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R1"
+      SrcTerminal   2
+      Points        [1670, 820]
+      Branch {
+        Points        [1625, 820]
+        Branch {
+          Points        [1470, 820]
+          Branch {
+            Points        [1320, 820]
+            Branch {
+              Points        [1185, 820]
+              Branch {
+                Points        [1085, 820]
+                Branch {
+                  DstComponent  "FET1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [50, 820]
+                  DstComponent  "V_dc"
+                  DstTerminal   2
+                }
+              }
+              Branch {
+                DstComponent  "FET2"
+                DstTerminal   2
+              }
+            }
+            Branch {
+              DstComponent  "FET3"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            DstComponent  "FET4"
+            DstTerminal   2
+          }
+        }
+        Branch {
+          DstComponent  "C1"
+          DstTerminal   2
+        }
+      }
+      Branch {
+        Points        [1735, 820]
+        DstComponent  "Vm1"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R1"
+      SrcTerminal   1
+      Points        [1670, 70]
+      Branch {
+        Points        [1625, 70]
+        Branch {
+          Points        [1600, 70]
+          Branch {
+            DstComponent  "D1"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [1600, 280]
+            Branch {
+              Points        [1600, 355]
+              Branch {
+                Points        [1600, 460]
+                DstComponent  "D4"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "D3"
+                DstTerminal   2
+              }
+            }
+            Branch {
+              DstComponent  "D2"
+              DstTerminal   2
+            }
+          }
+        }
+        Branch {
+          DstComponent  "C1"
+          DstTerminal   1
+        }
+      }
+      Branch {
+        Points        [1735, 70]
+        DstComponent  "Vm1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm1"
+      SrcTerminal   3
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am3"
+      SrcTerminal   3
+      Points        [20, 745]
+      DstComponent  "Scope3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_dc"
+      SrcTerminal   1
+      DstComponent  "Am3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "PWM"
+      SrcTerminal   1
+      DstComponent  "FET1"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "PWM1"
+      SrcTerminal   1
+      DstComponent  "FET2"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Mux"
+      SrcTerminal   1
+      DstComponent  "Scope1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      Points        [885, 35; 940, 35; 940, 145]
+      DstComponent  "Mux"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am2"
+      SrcTerminal   3
+      Points        [890, 155]
+      DstComponent  "Mux"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "D2"
+      SrcTerminal   1
+      Points        [1185, 280]
+      Branch {
+        DstComponent  "FET2"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [1050, 280; 1050, 295]
+        DstComponent  "Am2"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "PWM2"
+      SrcTerminal   1
+      DstComponent  "FET3"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "PWM3"
+      SrcTerminal   1
+      DstComponent  "FET4"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "FET4"
+      SrcTerminal   1
+      Points        [1470, 460]
+      Branch {
+        DstComponent  "D4"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Am5"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "D3"
+      SrcTerminal   1
+      Points        [1320, 355]
+      Branch {
+        DstComponent  "FET3"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Am4"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am4"
+      SrcTerminal   3
+      Points        [910, 165]
+      DstComponent  "Mux"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am5"
+      SrcTerminal   3
+      Points        [935, 175]
+      DstComponent  "Mux"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat2"
+      SrcTerminal   2
+      DstComponent  "Rc"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat5"
+      SrcTerminal   1
+      DstComponent  "Rc"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat6"
+      SrcTerminal   2
+      Points        [70, 250; 70, 180]
+      Branch {
+        Points        [70, 120]
+        DstComponent  "P_sat4"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "P_sat5"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat8"
+      SrcTerminal   2
+      DstComponent  "P_air4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat9"
+      SrcTerminal   1
+      Points        [375, 485; 375, 410]
+      Branch {
+        DstComponent  "P_sat8"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "P_sat7"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "Ro1"
+      SrcTerminal   2
+      DstComponent  "P_sat4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "R2"
+      SrcTerminal   2
+      DstComponent  "P_sat6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_air3"
+      SrcTerminal   2
+      DstComponent  "P_sat10"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat11"
+      SrcTerminal   1
+      DstComponent  "P_air4"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat12"
+      SrcTerminal   1
+      DstComponent  "P_air5"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L21"
+      SrcTerminal   2
+      Points        [240, 290; 50, 290]
+      Branch {
+        Points        [50, 515]
+        Branch {
+          Points        [50, 645]
+          Branch {
+            DstComponent  "Am3"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [520, 645]
+            DstComponent  "L8"
+            DstTerminal   2
+          }
+        }
+        Branch {
+          Points        [275, 515]
+          DstComponent  "L3"
+          DstTerminal   2
+        }
+      }
+      Branch {
+        Points        [50, 70; 210, 70]
+        DstComponent  "L1"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L23"
+      SrcTerminal   3
+      DstComponent  "P_sat7"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L23"
+      SrcTerminal   4
+      DstComponent  "P_air3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L3"
+      SrcTerminal   4
+      DstComponent  "P_air5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L3"
+      SrcTerminal   3
+      DstComponent  "P_sat9"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat12"
+      SrcTerminal   2
+      Points        [125, 485; 125, 410]
+      Branch {
+        Points        [125, 345]
+        DstComponent  "P_sat10"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "P_sat11"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat3"
+      SrcTerminal   2
+      DstComponent  "L21"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L21"
+      SrcTerminal   4
+      DstComponent  "R2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L1"
+      SrcTerminal   4
+      DstComponent  "Ro1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L1"
+      SrcTerminal   3
+      DstComponent  "P_sat1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat2"
+      SrcTerminal   1
+      Points        [330, 180]
+      Branch {
+        Points        [330, 250]
+        DstComponent  "P_sat3"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [330, 120]
+        DstComponent  "P_sat1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat14"
+      SrcTerminal   2
+      DstComponent  "P_air7"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat15"
+      SrcTerminal   1
+      Points        [795, 235; 795, 160]
+      Branch {
+        DstComponent  "P_sat14"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "P_sat13"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_air6"
+      SrcTerminal   2
+      DstComponent  "P_sat16"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat17"
+      SrcTerminal   1
+      DstComponent  "P_air7"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat18"
+      SrcTerminal   1
+      DstComponent  "P_air8"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L14"
+      SrcTerminal   3
+      DstComponent  "P_sat13"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L14"
+      SrcTerminal   4
+      DstComponent  "P_air6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L41"
+      SrcTerminal   4
+      Points        [640, 235; 640, 230]
+      DstComponent  "P_air8"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L41"
+      SrcTerminal   3
+      DstComponent  "P_sat15"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat18"
+      SrcTerminal   2
+      Points        [520, 160]
+      Branch {
+        Points        [520, 95]
+        DstComponent  "P_sat16"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "P_sat17"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat20"
+      SrcTerminal   2
+      DstComponent  "P_air10"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat21"
+      SrcTerminal   1
+      Points        [645, 615; 645, 540]
+      Branch {
+        DstComponent  "P_sat20"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "P_sat19"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_air9"
+      SrcTerminal   2
+      DstComponent  "P_sat22"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat23"
+      SrcTerminal   1
+      DstComponent  "P_air10"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat24"
+      SrcTerminal   1
+      DstComponent  "P_air11"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L7"
+      SrcTerminal   3
+      DstComponent  "P_sat19"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L7"
+      SrcTerminal   4
+      DstComponent  "P_air9"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L8"
+      SrcTerminal   4
+      DstComponent  "P_air11"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "L8"
+      SrcTerminal   3
+      DstComponent  "P_sat21"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Magnetic
+      SrcComponent  "P_sat24"
+      SrcTerminal   2
+      Points        [405, 610; 405, 540]
+      Branch {
+        Points        [405, 475]
+        DstComponent  "P_sat22"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "P_sat23"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L23"
+      SrcTerminal   2
+      Points        [280, 300; 270, 300]
+      DstComponent  "L21"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L8"
+      SrcTerminal   1
+      Points        [550, 655; 670, 655]
+      DstComponent  "L41"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L41"
+      SrcTerminal   1
+      Points        [700, 275; 795, 275; 795, 460]
+      DstComponent  "Am5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L3"
+      SrcTerminal   1
+      Points        [305, 520; 395, 520; 395, 355; 525, 355]
+      DstComponent  "L7"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am2"
+      SrcTerminal   1
+      Points        [320, 295; 320, 335]
+      DstComponent  "L23"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L7"
+      SrcTerminal   1
+      Points        [555, 355]
+      DstComponent  "Am4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   1
+      Points        [705, 70]
+      DstComponent  "L14"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L1"
+      SrcTerminal   1
+      Points        [240, 70; 675, 70]
+      DstComponent  "L14"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      DstComponent  "Goto"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe1"
+      SrcTerminal   1
+      DstComponent  "Goto1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe2"
+      SrcTerminal   1
+      DstComponent  "Goto2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe3"
+      SrcTerminal   1
+      DstComponent  "Goto3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Mux1"
+      SrcTerminal   1
+      Points        [2125, 125]
+      DstComponent  "Scope2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From"
+      SrcTerminal   1
+      DstComponent  "Mux1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From1"
+      SrcTerminal   1
+      Points        [2085, 140; 2085, 130]
+      DstComponent  "Mux1"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From2"
+      SrcTerminal   1
+      Points        [2090, 165; 2090, 140]
+      DstComponent  "Mux1"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From3"
+      SrcTerminal   1
+      Points        [2095, 185; 2095, 150]
+      DstComponent  "Mux1"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe4"
+      SrcTerminal   1
+      DstComponent  "Scope4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe5"
+      SrcTerminal   1
+      DstComponent  "Scope5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe6"
+      SrcTerminal   1
+      DstComponent  "Scope6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe7"
+      SrcTerminal   1
+      DstComponent  "Scope7"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe8"
+      SrcTerminal   1
+      DstComponent  "Scope8"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe9"
+      SrcTerminal   1
+      DstComponent  "Scope9"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe10"
+      SrcTerminal   1
+      DstComponent  "Scope10"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe11"
+      SrcTerminal   1
+      DstComponent  "Scope11"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe12"
+      SrcTerminal   1
+      DstComponent  "Scope12"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Step"
+      SrcTerminal   1
+      DstComponent  "S1"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "D1"
+      SrcTerminal   1
+      Points        [1085, 70]
+      Branch {
+        DstComponent  "Am1"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "FET1"
+        DstTerminal   1
+      }
+    }
+  }
+}
+DemoSignature "DOgcV7jqHhmvB4YQIrjgzPGcdcBeIKC7we2wyJGbgc8="
